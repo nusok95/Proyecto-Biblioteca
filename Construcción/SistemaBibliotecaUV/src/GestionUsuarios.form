@@ -95,7 +95,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="panel2" alignment="1" max="32767" attributes="0"/>
+                      <Component id="panelBusqueda" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -153,16 +153,25 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="txtCP" min="-2" pref="71" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                              </Group>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <EmptySpace min="0" pref="117" max="32767" attributes="0"/>
                                                   <Component id="jButton14" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="txtCP" min="-2" pref="71" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="32767" attributes="0"/>
+                                                          <Component id="txtCalle" min="-2" pref="100" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -185,17 +194,6 @@
                                           </Group>
                                           <Component id="jLabel9" min="-2" pref="127" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                                  <Component id="txtCalle" min="-2" pref="100" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -205,8 +203,8 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="panel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="panelBusqueda" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="etq2Matricula3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtBusqueda" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -388,18 +386,23 @@
                     <Property name="text" type="java.lang.String" value="Colonia"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="panel2">
+                <Container class="javax.swing.JPanel" name="panelBusqueda">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="99" red="99" type="rgb"/>
+                    </Property>
+                  </Properties>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="etiqueta3" min="-2" max="-2" attributes="0"/>
+                              <Component id="etqNuevoAspirante" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="etiqueta4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
-                              <Component id="etiqueta2" min="-2" max="-2" attributes="0"/>
+                              <Component id="etqBusqueda" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
+                              <Component id="etqEditarAspirante" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -407,18 +410,18 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="etiqueta3" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="etiqueta2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="etiqueta4" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="etqNuevoAspirante" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="etqEditarAspirante" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="etqBusqueda" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="etiqueta3">
+                    <Component class="javax.swing.JLabel" name="etqNuevoAspirante">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Microsoft JhengHei" size="16" style="0"/>
@@ -426,7 +429,7 @@
                         <Property name="text" type="java.lang.String" value="Nuevo aspirante"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="etiqueta2">
+                    <Component class="javax.swing.JLabel" name="etqEditarAspirante">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Microsoft JhengHei" size="16" style="0"/>
@@ -434,10 +437,10 @@
                         <Property name="text" type="java.lang.String" value="Editar aspirante"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="etiqueta4">
+                    <Component class="javax.swing.JLabel" name="etqBusqueda">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Microsoft JhengHei" size="16" style="0"/>
+                          <Font name="Microsoft JhengHei" size="18" style="0"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="B&#xfa;squeda"/>
                       </Properties>
@@ -475,6 +478,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>

@@ -148,22 +148,11 @@ public class Servicios {
       int estado){
        try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("UPDATE lector set nombre=?,    where id=?");
-            //PreparedStatement x = connection.prepareStatement("UPDATE lector set nombre=?  where matricula = ?");
-            x.setString(1, nombre);
-            x.setString(2, mat);
-            x.setString(3, apellidoPaterno);
-            x.setString(4, correo);
-            x.setString(5, telefono);
-            x.setInt(6, tipo);
-            x.setString(7, calle);
-            x.setString(8, cp);
-            x.setString(9, colonia);
-            x.setString(10, numero);
-            x.setInt(11, estado);
+            PreparedStatement x = connection.prepareStatement("UPDATE lector set nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,numero=?,estado=?  where id=?");
+            x.setString(1, nombre);x.setString(2, apellidoPaterno);x.setString(3,apellidoMaterno);x.setString(4, correo);x.setString(5,telefono);x.setInt(6,tipo);
+            x.setString(7, calle);x.setString(8,cp);x.setString(9, colonia);x.setString(10,numero);x.setInt(11, estado);x.setString(12, mat);
             x.executeUpdate();
             JOptionPane.showMessageDialog(null, "LECTOR ACTUALIZADO");
-            
             connection.close();
             x.close();
 

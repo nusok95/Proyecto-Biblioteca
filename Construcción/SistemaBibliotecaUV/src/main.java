@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Carlos
+ * @version 0.2
  */
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 public class main {
 
   /**

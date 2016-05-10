@@ -2,6 +2,7 @@
 
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,6 +13,7 @@ import java.awt.Color;
 /**
  *
  * @author Carlos
+ * @version 0.2
  */
 public class MenuCirculacion extends javax.swing.JFrame {
 
@@ -95,8 +97,7 @@ public class MenuCirculacion extends javax.swing.JFrame {
         .addGap(45, 45, 45)
         .addComponent(etqUsuarios)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(etqAyuda)
-        .addContainerGap())
+        .addComponent(etqAyuda))
     );
     jPanel9Layout.setVerticalGroup(
       jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,15 +280,21 @@ public class MenuCirculacion extends javax.swing.JFrame {
   }//GEN-LAST:event_etqUsuariosMouseClicked
 
   private void etqMaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqMaterialMouseClicked
-    // TODO add your handling code here:
+     GestionDePrestamos gest = new GestionDePrestamos();
+     gest.setVisible(true);
+     this.dispose();
   }//GEN-LAST:event_etqMaterialMouseClicked
 
   private void etqSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqSalirMouseClicked
-    // TODO add your handling code here:
+    //System.exit(WIDTH);
+    MenuPrincipal inicio = new MenuPrincipal();
+    inicio.setVisible(true);
+    setVisible(false);
+    this.dispose();
   }//GEN-LAST:event_etqSalirMouseClicked
 
   private void etqAyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqAyudaMouseClicked
-    // TODO add your handling code here:
+    JOptionPane.showMessageDialog(null, "No podemos ayudarle en estos momentos");
   }//GEN-LAST:event_etqAyudaMouseClicked
 
   /**

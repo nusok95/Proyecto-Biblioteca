@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Carlos
+ * @version 0.2
  */
 public class MenuPrincipal extends javax.swing.JFrame {
   /**
@@ -72,6 +73,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     jLabel19 = new javax.swing.JLabel();
     jLabel29 = new javax.swing.JLabel();
     jLabel6 = new javax.swing.JLabel();
+    etqSalir = new javax.swing.JLabel();
     jPanel10 = new javax.swing.JPanel();
     jLabel5 = new javax.swing.JLabel();
     jPanel11 = new javax.swing.JPanel();
@@ -347,6 +349,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     jLabel6.setForeground(new java.awt.Color(255, 255, 255));
     jLabel6.setText("Biblioteca UV");
 
+    etqSalir.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
+    etqSalir.setForeground(new java.awt.Color(255, 255, 255));
+    etqSalir.setText("Salir");
+    etqSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqSalirMouseClicked(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
     jPanel7.setLayout(jPanel7Layout);
     jPanel7Layout.setHorizontalGroup(
@@ -356,14 +367,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(etqSalir)
+        .addGap(19, 19, 19))
     );
     jPanel7Layout.setVerticalGroup(
       jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jLabel6))
+          .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addComponent(jLabel6)
+            .addComponent(etqSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
@@ -550,6 +565,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_btnEntrarActionPerformed
 
+  private void etqSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqSalirMouseClicked
+    System.exit(WIDTH);
+    
+  }//GEN-LAST:event_etqSalirMouseClicked
+
   /**
    * @param args the command line arguments
    */
@@ -594,6 +614,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
   private javax.swing.JLabel etqCorreo;
   private javax.swing.JLabel etqMatricula;
   private javax.swing.JLabel etqNombre;
+  private javax.swing.JLabel etqSalir;
   private javax.swing.JLabel etqTelefono;
   private javax.swing.JLabel etqUsuario;
   private javax.swing.JButton jButton2;

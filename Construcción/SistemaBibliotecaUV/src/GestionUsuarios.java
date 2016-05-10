@@ -5,8 +5,10 @@ import clases.Servicios;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +19,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Carlos
+ * @version 0.2
  */
 public class GestionUsuarios extends javax.swing.JFrame {
  Servicios serv = new Servicios();
@@ -30,6 +33,9 @@ public class GestionUsuarios extends javax.swing.JFrame {
    inhabilitarEtiquetas();
   }
   
+  /**
+   *Funcion para Inhabilitar Etiquetas
+   */
   public void inhabilitarEtiquetas(){
   this.txtBusqueda.setText("Búsqueda");this.txtBusqueda.setForeground(Color.GRAY);  this.txtNombre.setEditable(false);this.txtApellidoPaterno.setEditable(false);this.txtApellidoMaterno.setEditable(false);this.txtCorreo.setEditable(false);this.txtTelefono.setEditable(false);this.cbTipoUsuario.setEditable(false);
   txtCalle.setEditable(false);txtColonia.setEditable(false);txtNumero.setEditable(false);txtCP.setEditable(false);this.btnBuscar.setEnabled(false);
@@ -39,9 +45,13 @@ public class GestionUsuarios extends javax.swing.JFrame {
     this.txtNombre.setText("");this.txtApellidoPaterno.setText("");this.txtApellidoMaterno.setText("");this.txtCorreo.setText("");this.txtTelefono.setText("");this.cbTipoUsuario.setSelectedIndex(0);
   txtCalle.setText("");txtColonia.setText("");txtNumero.setText("");txtCP.setText("");
    }
+
+  /**
+   *Funcion para Inhabilitar Etiquetas
+   */
   public void habilitarEtiquetas(){
     this.txtBusqueda.setEditable(true);this.txtNombre.setEditable(true);this.txtApellidoPaterno.setEditable(true);this.txtApellidoMaterno.setEditable(true);this.txtCorreo.setEditable(true);this.txtTelefono.setEditable(true);this.cbTipoUsuario.setEditable(true);
-  txtCalle.setEditable(true);txtColonia.setEditable(true);txtNumero.setEditable(true);txtCP.setEditable(true);
+  txtCalle.setEditable(true);txtColonia.setEditable(true);txtNumero.setEditable(true);txtCP.setEditable(true);this.cbTipoUsuario.setEnabled(true);
   
    /*this.txtBusqueda.setText("");*/this.txtNombre.setText("");this.txtApellidoPaterno.setText("");this.txtApellidoMaterno.setText("");this.txtCorreo.setText("");this.txtTelefono.setText("");this.cbTipoUsuario.setSelectedIndex(0);
   txtCalle.setText("");txtColonia.setText("");txtNumero.setText("");txtCP.setText("");
@@ -113,9 +123,12 @@ public class GestionUsuarios extends javax.swing.JFrame {
     jPanel17 = new javax.swing.JPanel();
     jPanel18 = new javax.swing.JPanel();
     jPanel19 = new javax.swing.JPanel();
+    etqAyuda = new javax.swing.JLabel();
     jLabel24 = new javax.swing.JLabel();
     jLabel30 = new javax.swing.JLabel();
     jLabel7 = new javax.swing.JLabel();
+    etqVolver = new javax.swing.JLabel();
+    etqSalir = new javax.swing.JLabel();
     jPanel20 = new javax.swing.JPanel();
     jLabel8 = new javax.swing.JLabel();
 
@@ -183,10 +196,10 @@ public class GestionUsuarios extends javax.swing.JFrame {
     panelBusqueda.setBackground(new java.awt.Color(153, 153, 153));
 
     etqNuevoAspirante.setFont(new java.awt.Font("Microsoft JhengHei", 0, 16)); // NOI18N
-    etqNuevoAspirante.setText("Nuevo aspirante");
+    etqNuevoAspirante.setText("Nuevo usuario");
 
     etqEditarAspirante.setFont(new java.awt.Font("Microsoft JhengHei", 0, 16)); // NOI18N
-    etqEditarAspirante.setText("Editar aspirante");
+    etqEditarAspirante.setText("Editar usuario");
 
     etqBusqueda.setFont(new java.awt.Font("Microsoft JhengHei", 0, 18)); // NOI18N
     etqBusqueda.setText("Búsqueda");
@@ -573,15 +586,29 @@ public class GestionUsuarios extends javax.swing.JFrame {
 
     jPanel19.setBackground(new java.awt.Color(51, 102, 255));
 
+    etqAyuda.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
+    etqAyuda.setForeground(new java.awt.Color(255, 255, 255));
+    etqAyuda.setText("Ayuda");
+    etqAyuda.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqAyudaMouseClicked(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
     jPanel19.setLayout(jPanel19Layout);
     jPanel19Layout.setHorizontalGroup(
       jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 0, Short.MAX_VALUE)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(etqAyuda)
+        .addContainerGap())
     );
     jPanel19Layout.setVerticalGroup(
       jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 22, Short.MAX_VALUE)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(etqAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     jLabel24.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 20)); // NOI18N
@@ -614,6 +641,24 @@ public class GestionUsuarios extends javax.swing.JFrame {
     jLabel7.setForeground(new java.awt.Color(255, 255, 255));
     jLabel7.setText("Biblioteca UV");
 
+    etqVolver.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
+    etqVolver.setForeground(new java.awt.Color(255, 255, 255));
+    etqVolver.setText("Volver");
+    etqVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqVolverMouseClicked(evt);
+      }
+    });
+
+    etqSalir.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
+    etqSalir.setForeground(new java.awt.Color(255, 255, 255));
+    etqSalir.setText("Salir");
+    etqSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqSalirMouseClicked(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
     jPanel17.setLayout(jPanel17Layout);
     jPanel17Layout.setHorizontalGroup(
@@ -623,7 +668,11 @@ public class GestionUsuarios extends javax.swing.JFrame {
         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(310, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(etqVolver)
+        .addGap(18, 18, 18)
+        .addComponent(etqSalir)
+        .addContainerGap())
     );
     jPanel17Layout.setVerticalGroup(
       jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,7 +680,10 @@ public class GestionUsuarios extends javax.swing.JFrame {
         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel17Layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel7))
+            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jLabel7)
+              .addComponent(etqVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(etqSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
           .addGroup(jPanel17Layout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
             .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -668,7 +720,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
       .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap(77, Short.MAX_VALUE)
         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 968, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(85, 85, 85))
     );
@@ -676,7 +728,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(36, 36, 36)
         .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -686,7 +738,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+      .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -715,12 +767,16 @@ public class GestionUsuarios extends javax.swing.JFrame {
   }//GEN-LAST:event_txtBusquedaActionPerformed
 
   private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
- if(serv.confirmarExistenciaLector(txtBusqueda.getText())){
+ ArrayList campos = new ArrayList<String>();
+ campos.add("*");//campos.add("apellido_paterno");campos.add("apellido_materno");
+    
+  if(serv.confirmarExistenciaLector(txtBusqueda.getText())){
    this.etqEditarAspirante.setForeground(Color.WHITE);
    this.etqNuevoAspirante.setForeground(Color.DARK_GRAY);
    this.etqBusqueda.setForeground(Color.DARK_GRAY);
    try {                                          
-    PreparedStatement x = serv.buscarLector(txtBusqueda.getText());
+    PreparedStatement x = serv.consulta("lector", campos, "id",
+        this.txtBusqueda.getText());
         
      ResultSet rs = x.executeQuery();
      try {
@@ -786,6 +842,24 @@ public class GestionUsuarios extends javax.swing.JFrame {
  
   }//GEN-LAST:event_jButton14ActionPerformed
 
+  private void etqVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqVolverMouseClicked
+    this.dispose();
+    MenuCirculacion menu = new MenuCirculacion();
+    menu.setVisible(true);
+  }//GEN-LAST:event_etqVolverMouseClicked
+
+  private void etqSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqSalirMouseClicked
+    //System.exit(WIDTH);
+    MenuPrincipal inicio = new MenuPrincipal();
+    inicio.setVisible(true);
+    setVisible(false);
+    this.dispose();
+  }//GEN-LAST:event_etqSalirMouseClicked
+
+  private void etqAyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqAyudaMouseClicked
+     JOptionPane.showMessageDialog(null, "No podemos ayudarle en estos momentos");
+  }//GEN-LAST:event_etqAyudaMouseClicked
+
   /**
    * @param args the command line arguments
    */
@@ -831,9 +905,12 @@ public class GestionUsuarios extends javax.swing.JFrame {
   private javax.swing.JLabel etq2Nombre3;
   private javax.swing.JLabel etq2Nombre4;
   private javax.swing.JLabel etq2Nombre5;
+  private javax.swing.JLabel etqAyuda;
   private javax.swing.JLabel etqBusqueda;
   private javax.swing.JLabel etqEditarAspirante;
   private javax.swing.JLabel etqNuevoAspirante;
+  private javax.swing.JLabel etqSalir;
+  private javax.swing.JLabel etqVolver;
   private javax.swing.JButton jButton10;
   private javax.swing.JButton jButton13;
   private javax.swing.JButton jButton14;

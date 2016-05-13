@@ -234,7 +234,7 @@ public class Servicios {
    * @param numero
    * @param estado
    */
-  public void actualizarLector(String mat,String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String telefono, int tipo, String calle, String cp, String colonia, String numero,
+  public void actualizar(String mat,String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String telefono, int tipo, String calle, String cp, String colonia, String numero,
       int estado){
        try {
             connection = Conexion.getConnection();

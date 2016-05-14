@@ -130,9 +130,8 @@ public class Servicios {
    * @param datoBusqueda
    * @return Una consulta de la base de datos.
    */
-  public PreparedStatement consulta(String nombreTabla, 
-        ArrayList<String> campos, String criterioBusqueda 
-        , String datoBusqueda){
+  
+  public PreparedStatement consulta(String nombreTabla,ArrayList<String> campos, String criterioBusqueda,String datoBusqueda){
       connection = Conexion.getConnection();
       String consulta = "Select";
       for(String temp: campos){
@@ -162,7 +161,27 @@ public class Servicios {
         }
  
        return null;
-    }     
+    }
+  
+  
+  public void actualizar(String nombreTabla, ArrayList<String> campos, ArrayList<String> datos, String criterioBusqueda,String datoBusqueda){
+       try {
+            connection = Conexion.getConnection();
+            PreparedStatement x = connection.prepareStatement("UPDATE lector set nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,numero=?,estado=?  where id=?");
+            /*x.setString(1, nombre);x.setString(2, apellidoPaterno);x.setString(3,apellidoMaterno);x.setString(4, correo);x.setString(5,telefono);x.setInt(6,tipo);
+            x.setString(7, calle);x.setString(8,cp);x.setString(9, colonia);x.setString(10,numero);x.setInt(11, estado);x.setString(12, mat);*/
+            x.executeUpdate();
+            JOptionPane.showMessageDialog(null, "LECTOR ACTUALIZADO");
+            connection.close();
+            x.close();
+
+        } catch (SQLException esql) {
+            System.out.println("Error al ejecutar el SQL");
+        } catch (Exception ex) {
+            System.out.println("No hay conexión");
+    
+     }
+     }
    
   /**
    *

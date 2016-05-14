@@ -43,7 +43,7 @@ public class GestionUsuariosTest {
     public void testInhabilitarEtiquetas() {
         System.out.println("inhabilitarEtiquetas");
         GestionUsuarios instance = new GestionUsuarios();
-        instance.inhabilitarEtiquetas();
+        //instance.inhabilitarEtiquetas();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -55,7 +55,7 @@ public class GestionUsuariosTest {
     public void testHabilitarEtiquetas() {
         System.out.println("habilitarEtiquetas");
         GestionUsuarios instance = new GestionUsuarios();
-        instance.habilitarEtiquetas();
+        //instance.habilitarEtiquetas();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

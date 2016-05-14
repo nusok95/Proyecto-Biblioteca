@@ -17,6 +17,12 @@ public class main {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
+    /*String cadena;
+     int x = Integer.parseInt("123");
+     double n = Double.parseDouble("123");
+    String nombre = "Carlos"; String campo="tabla";
+    cadena = nombre+campo;
+    System.out.println(cadena)*/
   MenuPrincipal menu = new MenuPrincipal();
   menu.setVisible(true);
   menu.setResizable(false);

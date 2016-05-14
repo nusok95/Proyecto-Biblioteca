@@ -164,12 +164,40 @@ public class Servicios {
     }
   
   
-  public void actualizar(String nombreTabla, ArrayList<String> campos, ArrayList<String> datos, String criterioBusqueda,String datoBusqueda){
-       try {
+  public void actualizar(String nombreTabla, ArrayList<String> camposString, ArrayList<String> datosString,ArrayList<String> camposInt, ArrayList<Integer> datosInt,
+      String criterioBusqueda,String datoBusqueda){
+    int interrogaciones1 = 0;
+    int interrogaciones2 = 0;
+    String consulta = "UPDATE"+" "+nombreTabla+" set ";   
+    for(String temp: camposString){
+        String campo = temp;
+        consulta=consulta+" "+campo+"=?,";
+        interrogaciones1++;
+      }
+    for(String temp: camposInt){
+        String campo = temp;
+        consulta=consulta+" "+campo+"=?,";
+        interrogaciones2++;
+      }
+      consulta=consulta.substring(0, consulta.length()-1);
+      consulta = consulta+" where "+criterioBusqueda+"=?";
+       JOptionPane.showMessageDialog(null,consulta);
+    
+    
+    try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("UPDATE lector set nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,numero=?,estado=?  where id=?");
-            /*x.setString(1, nombre);x.setString(2, apellidoPaterno);x.setString(3,apellidoMaterno);x.setString(4, correo);x.setString(5,telefono);x.setInt(6,tipo);
-            x.setString(7, calle);x.setString(8,cp);x.setString(9, colonia);x.setString(10,numero);x.setInt(11, estado);x.setString(12, mat);*/
+            PreparedStatement x = connection.prepareStatement(consulta);
+            int posicion = 1;
+            for (int i = 0; i < interrogaciones1; i++) {
+              x.setString(posicion,datosString.get(i));
+              posicion++;
+            }
+             JOptionPane.showMessageDialog(null,posicion);
+            x.setString(posicion, datoBusqueda);
+            /*for (int i = 0; i < interrogaciones2; i++) {
+            x.setString(posicion,datosString.get(i));
+            posicion++;
+            }*/
             x.executeUpdate();
             JOptionPane.showMessageDialog(null, "LECTOR ACTUALIZADO");
             connection.close();

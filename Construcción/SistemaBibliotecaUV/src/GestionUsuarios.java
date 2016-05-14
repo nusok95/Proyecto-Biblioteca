@@ -1053,7 +1053,18 @@ public class GestionUsuarios extends javax.swing.JFrame {
             serv.registrarUsuario(txtBusqueda.getText(),txtNombre.getText(), txtApellidoPaterno.getText(), txtApellidoMaterno.getText(),txtCorreo.getText(),txtTelefono.getText(),cbTipoUsuario.getSelectedIndex(),txtCalle.getText(),txtCP.getText(),txtColonia.getText(),txtNumero.getText(),1);
             inhabilitarEtiquetas();
         }else{
-            serv.actualizar(txtBusqueda.getText(),txtNombre.getText(), txtApellidoPaterno.getText(),txtApellidoMaterno.getText() ,txtCorreo.getText(),txtTelefono.getText(),cbTipoUsuario.getSelectedIndex(),txtCalle.getText(), txtCP.getText(),txtColonia.getText(),txtNumero.getText(),1);
+          ArrayList<String> camposS = new ArrayList<String>();
+          ArrayList<String> datosS = new ArrayList<String>();
+          ArrayList<String> camposI = new ArrayList<String>();
+          ArrayList<Integer> datosI = new ArrayList<Integer>();
+          camposS.add("nombre");camposS.add("apellido_paterno");
+          datosS.add(txtNombre.getText());datosS.add(txtApellidoPaterno.getText());
+          //camposI.add("tipo_usuario");camposI.add("estado");
+          //datosI.add(1);datosI.add(1);
+          
+          serv.actualizar("lector", camposS, datosS, camposI, datosI, "id", this.txtBusqueda.getText());
+            
+             //serv.actualizar(txtBusqueda.getText(),txtNombre.getText(), txtApellidoPaterno.getText(),txtApellidoMaterno.getText() ,txtCorreo.getText(),txtTelefono.getText(),cbTipoUsuario.getSelectedIndex(),txtCalle.getText(), txtCP.getText(),txtColonia.getText(),txtNumero.getText(),1);
         }
         inhabilitarEtiquetas();
     }//GEN-LAST:event_btnGuardarActionPerformed

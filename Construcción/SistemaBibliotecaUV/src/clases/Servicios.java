@@ -140,7 +140,10 @@ public class Servicios {
         consulta=consulta+" "+campo+",";
       }
       consulta=consulta.substring(0, consulta.length()-1);
-      consulta = consulta+" from "+nombreTabla+" where "+criterioBusqueda+"=?";
+      consulta = consulta+" from "+nombreTabla;
+      if(criterioBusqueda != null){
+       consulta= consulta +" where "+criterioBusqueda+"=?";
+          }
        JOptionPane.showMessageDialog(null,consulta);
        //JOptionPane.showMessageDialog(null, consulta);
       try {
@@ -164,7 +167,7 @@ public class Servicios {
        return null;
     }
   
-  
+  //Actualizar genérico recibe el nombre de la tabla 4 ArrayList con los nombres de los campos,los datos y 2 strings con el criterio de búsqueda ID = s14011642
   public void actualizar(String nombreTabla, ArrayList<String> camposString, ArrayList<String> datosString,ArrayList<String> camposInt, ArrayList<Integer> datosInt,
       String criterioBusqueda,String datoBusqueda){
     int interrogaciones1 = 0;
@@ -194,11 +197,12 @@ public class Servicios {
               posicion++;
             }
              JOptionPane.showMessageDialog(null,posicion);
-            x.setString(posicion, datoBusqueda);
-            /*for (int i = 0; i < interrogaciones2; i++) {
-            x.setString(posicion,datosString.get(i));
+      
+            for (int i = 0; i < interrogaciones2; i++) {
+            x.setInt(posicion,datosInt.get(i));
             posicion++;
-            }*/
+            }
+            x.setString(posicion, datoBusqueda);
             x.executeUpdate();
             JOptionPane.showMessageDialog(null, "LECTOR ACTUALIZADO");
             connection.close();

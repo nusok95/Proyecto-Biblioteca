@@ -1058,8 +1058,10 @@ public class GestionUsuarios extends javax.swing.JFrame {
           ArrayList<String> datosS = new ArrayList<String>();
           ArrayList<String> camposI = new ArrayList<String>();
           ArrayList<Integer> datosI = new ArrayList<Integer>();
-          camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");
-          datosS.add(txtNombre.getText());datosS.add(txtApellidoPaterno.getText());datosS.add(txtApellidoMaterno.getText());
+          camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
+          datosS.add(txtNombre.getText());datosS.add(txtApellidoPaterno.getText());datosS.add(txtApellidoMaterno.getText());datosS.add(txtCorreo.getText());
+          camposI.add("tipo_usuario");
+          datosI.add(this.cbTipoUsuario.getSelectedIndex());
           JOptionPane.showMessageDialog(null,serv.getClass());
           //camposI.add("tipo_usuario");camposI.add("estado");
           //datosI.add(1);datosI.add(1);

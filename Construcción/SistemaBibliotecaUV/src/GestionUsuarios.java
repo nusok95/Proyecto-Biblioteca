@@ -1053,12 +1053,14 @@ public class GestionUsuarios extends javax.swing.JFrame {
             serv.registrarUsuario(txtBusqueda.getText(),txtNombre.getText(), txtApellidoPaterno.getText(), txtApellidoMaterno.getText(),txtCorreo.getText(),txtTelefono.getText(),cbTipoUsuario.getSelectedIndex(),txtCalle.getText(),txtCP.getText(),txtColonia.getText(),txtNumero.getText(),1);
             inhabilitarEtiquetas();
         }else{
+          //"UPDATE lector set nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,numero=?,estado=?  where id=?");
           ArrayList<String> camposS = new ArrayList<String>();
           ArrayList<String> datosS = new ArrayList<String>();
           ArrayList<String> camposI = new ArrayList<String>();
           ArrayList<Integer> datosI = new ArrayList<Integer>();
-          camposS.add("nombre");camposS.add("apellido_paterno");
-          datosS.add(txtNombre.getText());datosS.add(txtApellidoPaterno.getText());
+          camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");
+          datosS.add(txtNombre.getText());datosS.add(txtApellidoPaterno.getText());datosS.add(txtApellidoMaterno.getText());
+          JOptionPane.showMessageDialog(null,serv.getClass());
           //camposI.add("tipo_usuario");camposI.add("estado");
           //datosI.add(1);datosI.add(1);
           

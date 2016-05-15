@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
@@ -210,6 +211,23 @@ public class Servicios {
     
      }
      }
+  
+  public void prueba(Object a ) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException{
+    System.out.println(a.getClass().getSimpleName());
+    Field[] atributos = a.getClass().getFields();
+    int i = 0;
+    Field atributo = atributos[i];
+    String nombreC = atributo.getName();
+    System.out.println(nombreC);
+   
+
+   Field nombre = a.getClass().getField(nombreC);
+   Object valor = nombre.get(a);
+    System.out.println(valor);
+    i++;
+  }
+    
+  
    
   /**
    *

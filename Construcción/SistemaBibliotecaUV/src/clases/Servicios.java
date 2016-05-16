@@ -82,47 +82,64 @@ public class Servicios {
         return b;
     }
     
-  /**
-   *
-   * @param mat
-   * @param nombre
-   * @param apellidoPaterno
-   * @param apellidoMaterno
-   * @param correo
-   * @param telefono
-   * @param tipo
-   * @param calle
-   * @param colonia
-   * @param numero
-   * @param cp
-   * @param estado
-   */
-  public void registrarUsuario (String mat,String nombre,
-        String apellidoPaterno, String apellidoMaterno,String correo,
-        String telefono, int tipo, String calle, 
-        String colonia, String numero, String cp,
-      int estado){
-      try {
+
+ public void insertar(String nombreTabla, ArrayList<String> camposString, ArrayList<String> datosString,ArrayList<String> camposInt, ArrayList<Integer> datosInt){
+    int interrogaciones1 = 0;
+    int interrogaciones2 = 0;
+    String consulta = "insert into"+" "+nombreTabla+" (";   
+    for(String temp: camposString){
+        String campo = temp;
+        consulta=consulta+campo+",";
+        interrogaciones1++;
+      }
+
+    for(String temp: camposInt){
+        String campo = temp;
+        consulta=consulta+campo+",";
+        interrogaciones2++;
+      }
+    
+    consulta=consulta.substring(0, consulta.length()-1);
+    consulta=consulta+") VALUES (";
+    for(String temp: camposString){
+        String campo = temp;
+        consulta=consulta+" ?,";
+    }
+    for(String temp: camposInt){
+        String campo = temp;
+        consulta=consulta+" ?,";
+        
+     }
+      consulta=consulta.substring(0, consulta.length()-1);
+      consulta = consulta+")";
+       JOptionPane.showMessageDialog(null,consulta);
+    
+    try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("INSERT INTO lector (id,nombre,apellido_paterno,apellido_materno,correo,telefono,tipo_usuario,calle,codigo_postal,"
-                + "colonia,numero,estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-            x.setString(1, mat); x.setString(2, nombre);x.setString(3, apellidoPaterno);x.setString(4,apellidoMaterno);x.setString(5, correo);x.setString(6,telefono);x.setInt(7, tipo);x.setString(8, calle);x.setString(9, cp);
-            x.setString(10, colonia);x.setString(11,numero);x.setInt(12, estado);
+            PreparedStatement x = connection.prepareStatement(consulta);
+            int posicion = 1;
+            for (int i = 0; i < interrogaciones1; i++) {
+              x.setString(posicion,datosString.get(i));
+              posicion++;
+            }
+             JOptionPane.showMessageDialog(null,posicion);
+      
+            for (int i = 0; i < interrogaciones2; i++) {
+            x.setInt(posicion,datosInt.get(i));
+            posicion++;
+            }
             x.executeUpdate();
-            JOptionPane.showMessageDialog(null, "LECTOR AGREGADO");
+            JOptionPane.showMessageDialog(null, "LECTOR ACTUALIZADO");
             connection.close();
             x.close();
-            
 
         } catch (SQLException esql) {
-            System.out.println(esql);
             System.out.println("Error al ejecutar el SQL");
         } catch (Exception ex) {
             System.out.println("No hay conexión");
-        }
-  
-    }
- 
+    
+     }
+     }
   /**
    *
    * @param nombreTabla

@@ -74,7 +74,7 @@ public class ServiciosTest {
         String cp = "";
         int estado = 0;
         Servicios instance = new Servicios();
-        instance.registrarUsuario(mat, nombre, apellidoPaterno, apellidoMaterno, correo, telefono, tipo, calle, colonia, numero, cp, estado);
+        //instance.registrarUsuario(mat, nombre, apellidoPaterno, apellidoMaterno, correo, telefono, tipo, calle, colonia, numero, cp, estado);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

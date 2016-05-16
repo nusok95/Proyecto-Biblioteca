@@ -25,14 +25,14 @@ public class main {
     String nombre = "Carlos"; String campo="tabla";
     cadena = nombre+campo;
     System.out.println(cadena)*/
-    Lector a = new Lector();
+   /* Lector a = new Lector();
     Material m = new Material();
     Servicios serv = new Servicios();
     serv.prueba(a);
-    serv.prueba(m);
-  MenuPrincipal menu = new MenuPrincipal();
-  menu.setVisible(true);
-  menu.setResizable(false);
+    serv.prueba(m);*/
+    MenuPrincipal menu = new MenuPrincipal();
+    menu.setVisible(true);
+    menu.setResizable(false);
   
   /*GestionDePrestamos guiGestion = new GestionDePrestamos();
   guiGestion.setVisible(true);

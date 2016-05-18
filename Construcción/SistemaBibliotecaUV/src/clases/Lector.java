@@ -5,6 +5,9 @@
  */
 package clases;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Carlos
@@ -13,6 +16,7 @@ package clases;
 public class Lector {
  private String id,nombre,apellido_p,apellido_m,correo,telefono,calle,cp,colonia,numero;
  private int tipo, estado;
+ Servicios serv = new Servicios();
  
  public Lector(String id, String nombre, String apellido_p,  String apellido_m,  String
      correo,  String telefono,  String calle,  String cp,  String colonia,  String numero, int tipo, int estado){
@@ -20,6 +24,43 @@ public class Lector {
    this.apellido_m = apellido_m; this.correo = correo;this.telefono=telefono;this.calle=calle;
    this.cp = cp;this.colonia = colonia; this.numero = numero; this.tipo=tipo; this.estado=estado;
  }
+public void agregarLector(){
+ ArrayList<String> camposS = new ArrayList<String>();
+ ArrayList<String> datosS = new ArrayList<String>();
+ ArrayList<String> camposI = new ArrayList<String>();
+ ArrayList<Integer> datosI = new ArrayList<Integer>();
+ camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
+ camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");camposS.add("colonia");camposS.add("numero");
+ datosS.add(getId());datosS.add(getNombre());datosS.add(getApellido_p());datosS.add(getApellido_m());
+ datosS.add(getCorreo());datosS.add(getTelefono());datosS.add(getCalle());datosS.add(getCp());
+ datosS.add(getColonia());datosS.add(getNumero());
+ camposI.add("tipo_usuario");
+ camposI.add("estado");
+ datosI.add(getTipo());
+ datosI.add(getEstado());
+ JOptionPane.showMessageDialog(null, camposS.get(0));
+ JOptionPane.showMessageDialog(null, nombre);
+ serv.insertar("lector", camposS, datosS, camposI, datosI);
+
+}
+
+public void actualizarLector(){
+ ArrayList<String> camposS = new ArrayList<String>();
+ ArrayList<String> datosS = new ArrayList<String>();
+ ArrayList<String> camposI = new ArrayList<String>();
+ ArrayList<Integer> datosI = new ArrayList<Integer>();
+ camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
+ camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");camposS.add("colonia");camposS.add("numero");
+ datosS.add(this.getId());datosS.add(getNombre());datosS.add(getApellido_p());datosS.add(getApellido_m());
+ datosS.add(getCorreo());datosS.add(getTelefono());datosS.add(getCalle());datosS.add(getCp());
+ datosS.add(getColonia());datosS.add(getNumero());
+ camposI.add("tipo_usuario");
+ camposI.add("estado");
+ datosI.add(getTipo());
+ datosI.add(getEstado());
+ serv.actualizar("lector", camposS, datosS, camposI, datosI, "id", getId());
+}
+
 
  
 

@@ -280,14 +280,14 @@ public class MenuCirculacion extends javax.swing.JFrame {
   }//GEN-LAST:event_etqUsuariosMouseClicked
 
   private void etqMaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqMaterialMouseClicked
-     GestionDePrestamos gest = new GestionDePrestamos();
+    GestionMaterial gest = new GestionMaterial();
      gest.setVisible(true);
      this.dispose();
   }//GEN-LAST:event_etqMaterialMouseClicked
 
   private void etqSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqSalirMouseClicked
     //System.exit(WIDTH);
-    MenuPrincipal inicio = new MenuPrincipal();
+    IniciarSesion inicio = new IniciarSesion();
     inicio.setVisible(true);
     setVisible(false);
     this.dispose();

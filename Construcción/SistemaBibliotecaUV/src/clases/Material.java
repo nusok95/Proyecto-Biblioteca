@@ -33,7 +33,6 @@ public class Material {
       ArrayList<String> datosS = new ArrayList<String>();
       ArrayList<String> camposI = new ArrayList<String>();
       ArrayList<Integer> datosI = new ArrayList<Integer>();
-      serv.insertar("material", camposS, datosS, camposI, datosI);
      camposS.add("folio");camposS.add("titulo");/*camposS.add("fecha_publicacion");*/camposS.add("edicion");camposS.add("editorial");camposS.add("autor");
      datosS.add(getFolio());datosS.add(getTitulo());/*datosS.add(getFecha_publicacion());*/datosS.add(getEdicion());
      datosS.add(getEditorial());datosS.add(getAutor());
@@ -47,7 +46,6 @@ public void actualizarMaterial(){
       ArrayList<String> datosS = new ArrayList<String>();
       ArrayList<String> camposI = new ArrayList<String>();
       ArrayList<Integer> datosI = new ArrayList<Integer>();
-      serv.insertar("material", camposS, datosS, camposI, datosI);
      camposS.add("folio");camposS.add("titulo");/*camposS.add("fecha_publicacion");*/camposS.add("edicion");camposS.add("editorial");camposS.add("autor");
      datosS.add(getFolio());datosS.add(getTitulo());/*datosS.add(getFecha_publicacion());*/datosS.add(getEdicion());
      datosS.add(getEditorial());datosS.add(getAutor());

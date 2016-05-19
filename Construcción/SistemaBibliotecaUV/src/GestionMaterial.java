@@ -31,14 +31,16 @@ public class GestionMaterial extends javax.swing.JFrame {
    */
   public GestionMaterial() {
     initComponents();
-    inhabilitarEtiquetas();
+    inhabilitarCampos();
   }
 
   
-  public void inhabilitarEtiquetas(){
+  public void inhabilitarCampos(){
     this.txtBusqueda.setText("Búsqueda");
     this.txtBusqueda.setForeground(Color.GRAY);  
-    this.txtTitulo.setEditable(false);this.txtAutor.setEditable(false);
+    this.txtTitulo.setEditable(false);
+    this.txtFechaPublicacion.setEditable(false);
+    this.txtAutor.setEditable(false);
     this.txtEditorial.setEditable(false);
     this.txtEdicion.setEditable(false);
     this.cbTipoMaterial.setEditable(false);
@@ -49,17 +51,26 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.etqBusqueda.setForeground(Color.WHITE);
     this.cbTipoMaterial.setEnabled(false);
     this.txtTitulo.setText("");
+    this.txtFechaPublicacion.setText("");
     this.txtAutor.setText("");
     this.txtEditorial.setText("");
     this.txtEdicion.setText("");
     this.cbTipoMaterial.setSelectedIndex(0);
+    this.txtCampoObligatorio.setForeground(Color.white);
+    this.txtCampoObligatorio1.setForeground(Color.white);
+    this.txtCampoObligatorio2.setForeground(Color.white);
+    this.txtCampoObligatorio3.setForeground(Color.white);
+    this.txtCampoObligatorio4.setForeground(Color.white);
+    this.txtCampoObligatorio5.setForeground(Color.white);
+    this.txtCampoObligatorio6.setForeground(Color.white);
   }
 
   /**
    *Funcion para Inhabilitar Etiquetas
    */
-  public void habilitarEtiquetas(){
+  public void habilitarCampos(){
     this.txtBusqueda.setEditable(true);
+      this.txtFechaPublicacion.setEditable(true);
     this.txtTitulo.setEditable(true);
     this.txtAutor.setEditable(true);
     this.txtEditorial.setEditable(true);
@@ -71,6 +82,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.txtAutor.setText("");
     this.txtEditorial.setText("");
     this.txtEdicion.setText("");
+     this.txtFechaPublicacion.setText("");
     this.cbTipoMaterial.setSelectedIndex(0);
  
   }
@@ -108,14 +120,13 @@ public class GestionMaterial extends javax.swing.JFrame {
     txtFechaPublicacion = new javax.swing.JTextField();
     etqEditorial = new javax.swing.JLabel();
     txtEditorial = new javax.swing.JTextField();
-<<<<<<< HEAD
     txtCampoObligatorio = new javax.swing.JLabel();
     txtCampoObligatorio1 = new javax.swing.JLabel();
     txtCampoObligatorio2 = new javax.swing.JLabel();
     txtCampoObligatorio3 = new javax.swing.JLabel();
     txtCampoObligatorio4 = new javax.swing.JLabel();
-=======
->>>>>>> origin/master
+    txtCampoObligatorio6 = new javax.swing.JLabel();
+    txtCampoObligatorio5 = new javax.swing.JLabel();
     jPanel2 = new javax.swing.JPanel();
     jPanel8 = new javax.swing.JPanel();
     etq2Matricula4 = new javax.swing.JLabel();
@@ -298,7 +309,6 @@ public class GestionMaterial extends javax.swing.JFrame {
       }
     });
 
-<<<<<<< HEAD
     txtCampoObligatorio.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     txtCampoObligatorio.setText("**");
 
@@ -314,23 +324,25 @@ public class GestionMaterial extends javax.swing.JFrame {
     txtCampoObligatorio4.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     txtCampoObligatorio4.setText("**");
 
-=======
->>>>>>> origin/master
+    txtCampoObligatorio6.setFont(new java.awt.Font("Tw Cen MT", 0, 12)); // NOI18N
+    txtCampoObligatorio6.setText("campos obligatorios");
+
+    txtCampoObligatorio5.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+    txtCampoObligatorio5.setText("**");
+
     javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
       jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(panelBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       .addGroup(jPanel6Layout.createSequentialGroup()
-<<<<<<< HEAD
         .addGap(67, 67, 67)
         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addComponent(txtCampoObligatorio)
-          .addComponent(txtCampoObligatorio1))
+          .addComponent(txtCampoObligatorio2)
+          .addComponent(txtCampoObligatorio4)
+          .addComponent(txtCampoObligatorio5))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-=======
-        .addGap(85, 85, 85)
->>>>>>> origin/master
         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel6Layout.createSequentialGroup()
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -347,28 +359,20 @@ public class GestionMaterial extends javax.swing.JFrame {
                 .addGap(465, 465, 465)
                 .addComponent(txtEditorial))
               .addGroup(jPanel6Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addComponent(etqTitulo)
-                    .addGap(34, 34, 34)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                      .addComponent(txtAutor)
-                      .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
-                    .addGap(6, 6, 6)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                      .addComponent(txtCampoObligatorio2)
-                      .addComponent(txtCampoObligatorio3)))
-                  .addComponent(txtCampoObligatorio4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-=======
                 .addComponent(etqTitulo)
                 .addGap(34, 34, 34)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                   .addComponent(txtAutor)
                   .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
->>>>>>> origin/master
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(3, 3, 3)
+                    .addComponent(txtCampoObligatorio1)
+                    .addGap(3, 3, 3))
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtCampoObligatorio3)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel6Layout.createSequentialGroup()
                     .addComponent(etqEdicion)
@@ -384,24 +388,22 @@ public class GestionMaterial extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))))
             .addGap(113, 113, 113))
           .addGroup(jPanel6Layout.createSequentialGroup()
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
               .addGroup(jPanel6Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(0, 24, Short.MAX_VALUE)
-=======
-                .addGap(0, 18, Short.MAX_VALUE)
->>>>>>> origin/master
                 .addComponent(btnCancelar)
                 .addGap(233, 233, 233)
                 .addComponent(btnGuardar)
                 .addGap(160, 160, 160)
                 .addComponent(btnBaja)
                 .addGap(63, 63, 63))
-              .addGroup(jPanel6Layout.createSequentialGroup()
+              .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                 .addComponent(etqTipoMaterial)
                 .addGap(18, 18, 18)
                 .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(txtCampoObligatorio6)
+                .addGap(657, 657, 657)))
             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
     );
     jPanel6Layout.setVerticalGroup(
@@ -410,7 +412,7 @@ public class GestionMaterial extends javax.swing.JFrame {
         .addComponent(panelBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel6Layout.createSequentialGroup()
-            .addGap(33, 188, Short.MAX_VALUE)
+            .addGap(33, 189, Short.MAX_VALUE)
             .addComponent(jLabel9))
           .addGroup(jPanel6Layout.createSequentialGroup()
             .addGap(38, 38, 38)
@@ -423,40 +425,31 @@ public class GestionMaterial extends javax.swing.JFrame {
               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
                 .addComponent(etqEditorial)
-                .addComponent(txtCampoObligatorio2))
+                .addComponent(txtCampoObligatorio1))
               .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(etqTitulo)
                 .addComponent(txtCampoObligatorio)))
-=======
-                .addComponent(etqEditorial))
-              .addComponent(etqTitulo))
->>>>>>> origin/master
             .addGap(25, 25, 25)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(etqAutor)
               .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
               .addComponent(etqEdicion)
-              .addComponent(txtCampoObligatorio1)
+              .addComponent(txtCampoObligatorio2)
               .addComponent(txtCampoObligatorio3))
-=======
-              .addComponent(etqEdicion))
->>>>>>> origin/master
             .addGap(32, 32, 32)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(etqTipoMaterial)
               .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(etqFechaPublicacion)
-<<<<<<< HEAD
               .addComponent(txtFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtCampoObligatorio4))
-=======
-              .addComponent(txtFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
->>>>>>> origin/master
-            .addGap(97, 97, 97)
+            .addGap(18, 18, 18)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(txtCampoObligatorio6)
+              .addComponent(txtCampoObligatorio5))
+            .addGap(64, 64, 64)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(btnCancelar)
               .addComponent(btnGuardar)
@@ -845,7 +838,7 @@ public class GestionMaterial extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   public void actionClickCancelar(){
-    inhabilitarEtiquetas();
+    inhabilitarCampos();
     }
   
   private void etqAyudaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqAyudaMouseClicked
@@ -954,7 +947,7 @@ public class GestionMaterial extends javax.swing.JFrame {
             ResultSet rs = x.executeQuery();
               try {
                if (rs.next()){
-                habilitarEtiquetas();
+                habilitarCampos();
                 this.txtTitulo.setText(rs.getString("titulo"));
                 this.txtAutor.setText(rs.getString("autor"));
                 this.txtEditorial.setText(rs.getString("editorial"));
@@ -972,57 +965,62 @@ public class GestionMaterial extends javax.swing.JFrame {
              System.out.println("No se puede ejecutar el SQL");
          }
         }else{
-            habilitarEtiquetas();
+            habilitarCampos();
             this.etqEditaMaterial.setForeground(Color.DARK_GRAY);
             this.etqNuevoMaterial.setForeground(Color.WHITE);
             this.etqBusqueda.setForeground(Color.DARK_GRAY);
         }        
     }
   
-   public boolean verificarCampos(){
+  public boolean verificarCampos(){
       boolean verificador = true;
-        if(this.txtTitulo.getText().isEmpty() && 
-          this.txtEdicion.getText().isEmpty() && 
-          this.txtEditorial.getText().isEmpty() &&
-          this.txtAutor.getText().isEmpty() &&
-          this.txtFechaPublicacion.getText().isEmpty()){
+        if(this.txtTitulo.getText().isEmpty() || 
+          this.txtEdicion.getText().isEmpty() || 
+          this.txtEditorial.getText().isEmpty() ||
+          this.txtAutor.getText().isEmpty()){
           verificador = false;
         }
         return verificador;
     }
-  
+
   public void notificacionCamposOblitagorios(){
     this.txtCampoObligatorio.setForeground(Color.red);
     this.txtCampoObligatorio1.setForeground(Color.red);
     this.txtCampoObligatorio2.setForeground(Color.red);
     this.txtCampoObligatorio3.setForeground(Color.red);
     this.txtCampoObligatorio4.setForeground(Color.red);
+    this.txtCampoObligatorio5.setForeground(Color.red);
+    this.txtCampoObligatorio6.setForeground(Color.red);
   }
 
+  
+  
     
   public void actionClickGuardar(){
-    if(!serv.confirmarExistencia("lector", "id", txtBusqueda.getText())){
-      Material material = new Material(this.txtBusqueda.getText(),
-      this.txtTitulo.getText(), this.txtEdicion.getText(),
-      this.txtEditorial.getText(),this.txtAutor.getText(),
-      this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
-      material.agregarMaterial();
-
-      //inhabilitarCampos();
+    if(!serv.confirmarExistencia("material", "folio", txtBusqueda.getText())){
+      if(this.verificarCampos()){
+        Material material = new Material(this.txtBusqueda.getText(),
+        this.txtTitulo.getText(), this.txtEdicion.getText(),
+        this.txtEditorial.getText(),this.txtAutor.getText(),
+        this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
+        material.agregarMaterial();
+        inhabilitarCampos();
       }else{
-          //this.notificacionCamposOblitagorios();
+        this.notificacionCamposOblitagorios();
       }
-      }else{
-
     }else{
-
-      Material material = new Material(this.txtBusqueda.getText(),
-      this.txtTitulo.getText(), this.txtEdicion.getText(),
-      this.txtEditorial.getText(),this.txtAutor.getText(),
-      this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
-      material.actualizarMaterial();
+      if(this.verificarCampos()){
+        Material material = new Material(this.txtBusqueda.getText(),
+        this.txtTitulo.getText(), this.txtEdicion.getText(),
+        this.txtEditorial.getText(),this.txtAutor.getText(),
+        this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
+        material.actualizarMaterial();
+        inhabilitarCampos();
+      }else{
+        this.notificacionCamposOblitagorios();
     }
-      inhabilitarEtiquetas();       
+    }
+            
   }
   
   /**
@@ -1108,14 +1106,13 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JPanel panelBusqueda;
   private javax.swing.JTextField txtAutor;
   private javax.swing.JTextField txtBusqueda;
-<<<<<<< HEAD
   private javax.swing.JLabel txtCampoObligatorio;
   private javax.swing.JLabel txtCampoObligatorio1;
   private javax.swing.JLabel txtCampoObligatorio2;
   private javax.swing.JLabel txtCampoObligatorio3;
   private javax.swing.JLabel txtCampoObligatorio4;
-=======
->>>>>>> origin/master
+  private javax.swing.JLabel txtCampoObligatorio5;
+  private javax.swing.JLabel txtCampoObligatorio6;
   private javax.swing.JTextField txtEdicion;
   private javax.swing.JTextField txtEditorial;
   private javax.swing.JTextField txtFechaPublicacion;

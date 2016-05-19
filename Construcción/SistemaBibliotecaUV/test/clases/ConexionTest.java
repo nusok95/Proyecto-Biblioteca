@@ -6,6 +6,7 @@
 package clases;
 
 import java.sql.Connection;
+import clases.Conexion;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,11 +45,10 @@ public class ConexionTest {
     @Test
     public void testGetConnection() {
         System.out.println("getConnection");
-        Connection expResult = null;
         Connection result = Conexion.getConnection();
-        assertEquals(expResult, result);
+        assertNotNull("La conexión falló porque los datos de usuario o password son inválidos.",result);
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

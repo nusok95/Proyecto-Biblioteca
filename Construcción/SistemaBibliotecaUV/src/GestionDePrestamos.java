@@ -845,8 +845,7 @@ public class GestionDePrestamos extends javax.swing.JFrame {
   }//GEN-LAST:event_jTextField19ActionPerformed
 
   private void etqSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqSalirMouseClicked
-    //System.exit(WIDTH);
-    MenuPrincipal inicio = new MenuPrincipal();
+    IniciarSesion inicio = new IniciarSesion();
     inicio.setVisible(true);
     setVisible(false);
     this.dispose();

@@ -282,12 +282,12 @@ public class Servicios {
    * @param matricula
    * @return Si el lector existe en los registros
    */
-  public boolean confirmarExistenciaLector (String matricula){
+  public boolean confirmarExistencia (String tabla, String campo, String dato ){
       boolean bandera = false;
        try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("SELECT * from lector where id = ?");
-            x.setString(1,matricula);
+            PreparedStatement x = connection.prepareStatement("SELECT * from "+tabla+" where "+campo+" = ?");
+            x.setString(1,dato);
             ResultSet rs = x.executeQuery();
             if(rs.next()){
                bandera = true;
@@ -304,6 +304,7 @@ public class Servicios {
  
        return bandera;
     }
+
      
   /**
    *

@@ -30,7 +30,7 @@ public class main {
     Servicios serv = new Servicios();
     serv.prueba(a);
     serv.prueba(m);*/
-    MenuPrincipal menu = new MenuPrincipal();
+    IniciarSesion menu = new IniciarSesion();
     menu.setVisible(true);
     menu.setResizable(false);
   

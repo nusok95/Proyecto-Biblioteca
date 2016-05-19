@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author susana
  */
-public class MenuPrincipalTest {
+public class IniciarSesionTest {
     
-    public MenuPrincipalTest() {
+    public IniciarSesionTest() {
     }
     
     @BeforeClass
@@ -37,13 +37,13 @@ public class MenuPrincipalTest {
     }
 
     /**
-     * Test of main method, of class MenuPrincipal.
+     * Test of main method, of class IniciarSesion.
      */
     @Test
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        MenuPrincipal.main(args);
+        IniciarSesion.main(args);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

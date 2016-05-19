@@ -37,25 +37,25 @@ public class GestionUsuariosTest {
     }
 
     /**
-     * Test of inhabilitarEtiquetas method, of class GestionUsuarios.
+     * Test of inhabilitarCampos method, of class GestionUsuarios.
      */
     @Test
-    public void testInhabilitarEtiquetas() {
+    public void testInhabilitarCampos() {
         System.out.println("inhabilitarEtiquetas");
         GestionUsuarios instance = new GestionUsuarios();
-        //instance.inhabilitarEtiquetas();
+        //instance.inhabilitarCampos();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of habilitarEtiquetas method, of class GestionUsuarios.
+     * Test of habilitarCampos method, of class GestionUsuarios.
      */
     @Test
     public void testHabilitarEtiquetas() {
         System.out.println("habilitarEtiquetas");
         GestionUsuarios instance = new GestionUsuarios();
-        //instance.habilitarEtiquetas();
+        //instance.habilitarCampos();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

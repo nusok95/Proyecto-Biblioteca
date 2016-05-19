@@ -108,11 +108,14 @@ public class GestionMaterial extends javax.swing.JFrame {
     txtFechaPublicacion = new javax.swing.JTextField();
     etqEditorial = new javax.swing.JLabel();
     txtEditorial = new javax.swing.JTextField();
+<<<<<<< HEAD
     txtCampoObligatorio = new javax.swing.JLabel();
     txtCampoObligatorio1 = new javax.swing.JLabel();
     txtCampoObligatorio2 = new javax.swing.JLabel();
     txtCampoObligatorio3 = new javax.swing.JLabel();
     txtCampoObligatorio4 = new javax.swing.JLabel();
+=======
+>>>>>>> origin/master
     jPanel2 = new javax.swing.JPanel();
     jPanel8 = new javax.swing.JPanel();
     etq2Matricula4 = new javax.swing.JLabel();
@@ -295,6 +298,7 @@ public class GestionMaterial extends javax.swing.JFrame {
       }
     });
 
+<<<<<<< HEAD
     txtCampoObligatorio.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     txtCampoObligatorio.setText("**");
 
@@ -310,17 +314,23 @@ public class GestionMaterial extends javax.swing.JFrame {
     txtCampoObligatorio4.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     txtCampoObligatorio4.setText("**");
 
+=======
+>>>>>>> origin/master
     javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
       jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(panelBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       .addGroup(jPanel6Layout.createSequentialGroup()
+<<<<<<< HEAD
         .addGap(67, 67, 67)
         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addComponent(txtCampoObligatorio)
           .addComponent(txtCampoObligatorio1))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+=======
+        .addGap(85, 85, 85)
+>>>>>>> origin/master
         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel6Layout.createSequentialGroup()
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -337,6 +347,7 @@ public class GestionMaterial extends javax.swing.JFrame {
                 .addGap(465, 465, 465)
                 .addComponent(txtEditorial))
               .addGroup(jPanel6Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                   .addGroup(jPanel6Layout.createSequentialGroup()
                     .addComponent(etqTitulo)
@@ -350,6 +361,14 @@ public class GestionMaterial extends javax.swing.JFrame {
                       .addComponent(txtCampoObligatorio3)))
                   .addComponent(txtCampoObligatorio4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+=======
+                .addComponent(etqTitulo)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(txtAutor)
+                  .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+>>>>>>> origin/master
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel6Layout.createSequentialGroup()
                     .addComponent(etqEdicion)
@@ -367,7 +386,11 @@ public class GestionMaterial extends javax.swing.JFrame {
           .addGroup(jPanel6Layout.createSequentialGroup()
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel6Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(0, 24, Short.MAX_VALUE)
+=======
+                .addGap(0, 18, Short.MAX_VALUE)
+>>>>>>> origin/master
                 .addComponent(btnCancelar)
                 .addGap(233, 233, 233)
                 .addComponent(btnGuardar)
@@ -400,26 +423,39 @@ public class GestionMaterial extends javax.swing.JFrame {
               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addComponent(etqEditorial)
                 .addComponent(txtCampoObligatorio2))
               .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(etqTitulo)
                 .addComponent(txtCampoObligatorio)))
+=======
+                .addComponent(etqEditorial))
+              .addComponent(etqTitulo))
+>>>>>>> origin/master
             .addGap(25, 25, 25)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(etqAutor)
               .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
               .addComponent(etqEdicion)
               .addComponent(txtCampoObligatorio1)
               .addComponent(txtCampoObligatorio3))
+=======
+              .addComponent(etqEdicion))
+>>>>>>> origin/master
             .addGap(32, 32, 32)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(etqTipoMaterial)
               .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(etqFechaPublicacion)
+<<<<<<< HEAD
               .addComponent(txtFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtCampoObligatorio4))
+=======
+              .addComponent(txtFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+>>>>>>> origin/master
             .addGap(97, 97, 97)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(btnCancelar)
@@ -962,6 +998,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.txtCampoObligatorio3.setForeground(Color.red);
     this.txtCampoObligatorio4.setForeground(Color.red);
   }
+
     
   public void actionClickGuardar(){
     if(!serv.confirmarExistencia("lector", "id", txtBusqueda.getText())){
@@ -970,11 +1007,15 @@ public class GestionMaterial extends javax.swing.JFrame {
       this.txtEditorial.getText(),this.txtAutor.getText(),
       this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
       material.agregarMaterial();
+
       //inhabilitarCampos();
       }else{
           //this.notificacionCamposOblitagorios();
       }
       }else{
+
+    }else{
+
       Material material = new Material(this.txtBusqueda.getText(),
       this.txtTitulo.getText(), this.txtEdicion.getText(),
       this.txtEditorial.getText(),this.txtAutor.getText(),
@@ -1067,11 +1108,14 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JPanel panelBusqueda;
   private javax.swing.JTextField txtAutor;
   private javax.swing.JTextField txtBusqueda;
+<<<<<<< HEAD
   private javax.swing.JLabel txtCampoObligatorio;
   private javax.swing.JLabel txtCampoObligatorio1;
   private javax.swing.JLabel txtCampoObligatorio2;
   private javax.swing.JLabel txtCampoObligatorio3;
   private javax.swing.JLabel txtCampoObligatorio4;
+=======
+>>>>>>> origin/master
   private javax.swing.JTextField txtEdicion;
   private javax.swing.JTextField txtEditorial;
   private javax.swing.JTextField txtFechaPublicacion;

@@ -215,6 +215,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
         btnGuardarKeyPressed(evt);
       }
     });
+<<<<<<< HEAD
 
     jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uv.jpg"))); // NOI18N
     jLabel9.setText("jLabel8");
@@ -227,6 +228,14 @@ public class GestionUsuarios extends javax.swing.JFrame {
         txtNombreActionPerformed(evt);
       }
     });
+=======
+
+    jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/uv.jpg"))); // NOI18N
+    jLabel9.setText("jLabel8");
+
+    etq2Matricula3.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+    etq2Matricula3.setText("Nùmero de personal/Matricula");
+>>>>>>> origin/master
 
     jLabel22.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     jLabel22.setText("Correo eléctronico");
@@ -487,6 +496,10 @@ public class GestionUsuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtCampoObligatorio7)
                 .addGap(0, 0, Short.MAX_VALUE)))
+<<<<<<< HEAD
+=======
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+>>>>>>> origin/master
             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())))
     );
@@ -840,6 +853,7 @@ public class GestionUsuarios extends javax.swing.JFrame {
         jButton1ActionPerformed(evt);
       }
     });
+<<<<<<< HEAD
 
     javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
     jPanel9.setLayout(jPanel9Layout);
@@ -981,6 +995,149 @@ public class GestionUsuarios extends javax.swing.JFrame {
       }
     });
 
+=======
+
+    javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+    jPanel9.setLayout(jPanel9Layout);
+    jPanel9Layout.setHorizontalGroup(
+      jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel9Layout.createSequentialGroup()
+        .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap())
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(31, 31, 31))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            .addComponent(jLabel1)
+            .addGap(35, 35, 35)
+            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(232, 232, 232))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            .addComponent(jButton1)
+            .addGap(368, 368, 368))))
+    );
+    jPanel9Layout.setVerticalGroup(
+      jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel9Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel1)
+          .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(18, 18, 18)
+        .addComponent(jButton1)
+        .addGap(248, 248, 248))
+    );
+
+    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+    jPanel3.setLayout(jPanel3Layout);
+    jPanel3Layout.setHorizontalGroup(
+      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 963, Short.MAX_VALUE)
+      .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+          .addGap(0, 0, Short.MAX_VALUE)
+          .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addGap(0, 0, Short.MAX_VALUE)))
+    );
+    jPanel3Layout.setVerticalGroup(
+      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 570, Short.MAX_VALUE)
+      .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+          .addGap(0, 0, Short.MAX_VALUE)
+          .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addGap(0, 0, Short.MAX_VALUE)))
+    );
+
+    jTabbedPane3.addTab("Ver adeudos", jPanel3);
+
+    jPanel17.setBackground(new java.awt.Color(153, 153, 153));
+
+    jPanel18.setBackground(new java.awt.Color(51, 51, 51));
+
+    jPanel19.setBackground(new java.awt.Color(51, 102, 255));
+
+    etqAyuda.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
+    etqAyuda.setForeground(new java.awt.Color(255, 255, 255));
+    etqAyuda.setText("Ayuda");
+    etqAyuda.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqAyudaMouseClicked(evt);
+      }
+    });
+
+    javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+    jPanel19.setLayout(jPanel19Layout);
+    jPanel19Layout.setHorizontalGroup(
+      jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(etqAyuda)
+        .addContainerGap())
+    );
+    jPanel19Layout.setVerticalGroup(
+      jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(etqAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+
+    jLabel24.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 20)); // NOI18N
+    jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel24.setText("Gestión de usuarios");
+
+    javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+    jPanel18.setLayout(jPanel18Layout);
+    jPanel18Layout.setHorizontalGroup(
+      jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(jPanel18Layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(jLabel24)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel18Layout.setVerticalGroup(
+      jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+        .addContainerGap(19, Short.MAX_VALUE)
+        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+
+    jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
+    jLabel30.setText("jLabel6");
+
+    jLabel7.setFont(new java.awt.Font("Microsoft JhengHei", 0, 24)); // NOI18N
+    jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel7.setText("Biblioteca UV");
+
+    etqVolver.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
+    etqVolver.setForeground(new java.awt.Color(255, 255, 255));
+    etqVolver.setText("Volver");
+    etqVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqVolverMouseClicked(evt);
+      }
+    });
+
+    etqSalir.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
+    etqSalir.setForeground(new java.awt.Color(255, 255, 255));
+    etqSalir.setText("Salir");
+    etqSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        etqSalirMouseClicked(evt);
+      }
+    });
+
+>>>>>>> origin/master
     javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
     jPanel17.setLayout(jPanel17Layout);
     jPanel17Layout.setHorizontalGroup(

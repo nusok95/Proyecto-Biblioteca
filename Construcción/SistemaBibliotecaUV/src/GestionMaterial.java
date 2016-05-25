@@ -39,7 +39,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.txtBusqueda.setText("Búsqueda");
     this.txtBusqueda.setForeground(Color.GRAY);  
     this.txtTitulo.setEditable(false);
-    this.txtFechaPublicacion.setEditable(false);
+    //this.txtFechaPublicacion.setEditable(false);
     this.txtAutor.setEditable(false);
     this.txtEditorial.setEditable(false);
     this.txtEdicion.setEditable(false);
@@ -51,7 +51,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.etqBusqueda.setForeground(Color.WHITE);
     this.cbTipoMaterial.setEnabled(false);
     this.txtTitulo.setText("");
-    this.txtFechaPublicacion.setText("");
+   // this.txtFechaPublicacion.setText("");
     this.txtAutor.setText("");
     this.txtEditorial.setText("");
     this.txtEdicion.setText("");
@@ -70,7 +70,7 @@ public class GestionMaterial extends javax.swing.JFrame {
    */
   public void habilitarCampos(){
     this.txtBusqueda.setEditable(true);
-      this.txtFechaPublicacion.setEditable(true);
+     // this.txtFechaPublicacion.setEditable(true);
     this.txtTitulo.setEditable(true);
     this.txtAutor.setEditable(true);
     this.txtEditorial.setEditable(true);
@@ -82,7 +82,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.txtAutor.setText("");
     this.txtEditorial.setText("");
     this.txtEdicion.setText("");
-     this.txtFechaPublicacion.setText("");
+     //this.txtFechaPublicacion.setText("");
     this.cbTipoMaterial.setSelectedIndex(0);
  
   }
@@ -104,7 +104,6 @@ public class GestionMaterial extends javax.swing.JFrame {
     jLabel9 = new javax.swing.JLabel();
     etqEdicion = new javax.swing.JLabel();
     etqAutor = new javax.swing.JLabel();
-    etqFechaPublicacion = new javax.swing.JLabel();
     etqTipoMaterial = new javax.swing.JLabel();
     cbTipoMaterial = new javax.swing.JComboBox();
     btnBaja = new javax.swing.JButton();
@@ -117,7 +116,6 @@ public class GestionMaterial extends javax.swing.JFrame {
     btnCancelar = new javax.swing.JButton();
     etqTitulo = new javax.swing.JLabel();
     txtAutor = new javax.swing.JTextField();
-    txtFechaPublicacion = new javax.swing.JTextField();
     etqEditorial = new javax.swing.JLabel();
     txtEditorial = new javax.swing.JTextField();
     txtCampoObligatorio = new javax.swing.JLabel();
@@ -186,9 +184,6 @@ public class GestionMaterial extends javax.swing.JFrame {
 
     etqAutor.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     etqAutor.setText("Autor");
-
-    etqFechaPublicacion.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
-    etqFechaPublicacion.setText("Fecha de publicación");
 
     etqTipoMaterial.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     etqTipoMaterial.setText("Tipo de material");
@@ -379,12 +374,7 @@ public class GestionMaterial extends javax.swing.JFrame {
                     .addGap(43, 43, 43)
                     .addComponent(txtEdicion))
                   .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(etqEditorial)
-                      .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(etqFechaPublicacion)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(etqEditorial)
                     .addGap(0, 0, Short.MAX_VALUE)))))
             .addGap(113, 113, 113))
           .addGroup(jPanel6Layout.createSequentialGroup()
@@ -442,8 +432,6 @@ public class GestionMaterial extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
               .addComponent(etqTipoMaterial)
               .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(etqFechaPublicacion)
-              .addComponent(txtFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(txtCampoObligatorio4))
             .addGap(18, 18, 18)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1002,9 +990,14 @@ public class GestionMaterial extends javax.swing.JFrame {
         Material material = new Material(this.txtBusqueda.getText(),
         this.txtTitulo.getText(), this.txtEdicion.getText(),
         this.txtEditorial.getText(),this.txtAutor.getText(),
-        this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
+        //this.txtFechaPublicacion.getText(),
+        this.cbTipoMaterial.getSelectedIndex(), 1);
+        String message="¿Seguro de que quiere guardar el registro?";
+        int respuesta=JOptionPane.showConfirmDialog(null, message, "Espere", JOptionPane.YES_NO_OPTION);
+        if (respuesta == JOptionPane.YES_OPTION){
         material.agregarMaterial();
         inhabilitarCampos();
+        }
       }else{
         this.notificacionCamposOblitagorios();
       }
@@ -1013,7 +1006,8 @@ public class GestionMaterial extends javax.swing.JFrame {
         Material material = new Material(this.txtBusqueda.getText(),
         this.txtTitulo.getText(), this.txtEdicion.getText(),
         this.txtEditorial.getText(),this.txtAutor.getText(),
-        this.txtFechaPublicacion.getText(),this.cbTipoMaterial.getSelectedIndex(), 1);
+        //this.txtFechaPublicacion.getText(),
+                this.cbTipoMaterial.getSelectedIndex(), 1);
         material.actualizarMaterial();
         inhabilitarCampos();
       }else{
@@ -1074,7 +1068,6 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JLabel etqEdicion;
   private javax.swing.JLabel etqEditaMaterial;
   private javax.swing.JLabel etqEditorial;
-  private javax.swing.JLabel etqFechaPublicacion;
   private javax.swing.JLabel etqNuevoMaterial;
   private javax.swing.JLabel etqSalir;
   private javax.swing.JLabel etqTipoMaterial;
@@ -1115,7 +1108,6 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JLabel txtCampoObligatorio6;
   private javax.swing.JTextField txtEdicion;
   private javax.swing.JTextField txtEditorial;
-  private javax.swing.JTextField txtFechaPublicacion;
   private javax.swing.JTextField txtTitulo;
   // End of variables declaration//GEN-END:variables
 }

@@ -145,7 +145,8 @@ public class ServiciosTest {
         String numero = "";
         int estado = 0;
         Servicios instance = new Servicios();
-        instance.actualizar(mat, nombre, apellidoPaterno, apellidoMaterno, correo, telefono, tipo, calle, cp, colonia, numero, estado);
+        instance.actualizar(mat, nombre, apellidoPaterno, apellidoMaterno,
+            correo, telefono, tipo, calle, cp, colonia, numero, estado);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

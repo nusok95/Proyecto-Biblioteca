@@ -1,31 +1,27 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2016 a las 02:00:10
--- Versión del servidor: 5.7.9-log
--- Versión de PHP: 7.0.5
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: biblioteca
+-- ------------------------------------------------------
+-- Server version	5.7.9-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Base de datos: `biblioteca`
+-- Table structure for table `lector`
 --
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `lector`
---
-
+DROP TABLE IF EXISTS `lector`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lector` (
   `id` varchar(15) NOT NULL,
   `nombre` varchar(15) DEFAULT NULL,
@@ -33,161 +29,83 @@ CREATE TABLE `lector` (
   `apellido_materno` varchar(15) DEFAULT NULL,
   `correo` varchar(30) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
-  `tipo_usuario` int(11) DEFAULT NULL,
+  `tipo_usuario` varchar(15) DEFAULT NULL,
   `calle` varchar(15) DEFAULT NULL,
   `codigo_postal` varchar(10) DEFAULT NULL,
   `colonia` varchar(15) DEFAULT NULL,
   `numero` varchar(10) DEFAULT NULL,
-  `estado` int(11) DEFAULT NULL
+  `estado` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `lector`
+-- Dumping data for table `lector`
 --
 
-INSERT INTO `lector` (`id`, `nombre`, `apellido_paterno`, `apellido_materno`, `correo`, `telefono`, `tipo_usuario`, `calle`, `codigo_postal`, `colonia`, `numero`, `estado`) VALUES
-('s14011607', 'Gerardo', 'Martinez', 'asdasa', 'dasda', 'dasd', 1, 'sadas', 'sad', 'dasda', '12', 1),
-('s14011627', 'Alan', 'Barrera', 'Arcos', 'aspdjas@pene.com', 'dajpsijda', 0, 'dasipjda', 'jip', 'dapsjd', 'dapsjd', 1),
-('s14011632', 'Susana', 'González', 'Portilla', 'susana@hotmail.com', '8812212', 1, 'asda', '1', 'dasdas', '32', 1),
-('s14011643', 'Ruben', 'Galvan', 'Lozada', 'rubenchito', 'jjj', 0, 'hhh', 'hhh', 'hhh', '3', 1),
-('s14011645', 'Volin', 'Boloban', '', '', '', 0, '', '', '', '', 1),
-('s14017955', 'Omar ', 'Cornelio', 'Munguia', 'asdijada', 'djaipsdj', 0, 'das', 'd', 'd', 'd', 1);
-
--- --------------------------------------------------------
+LOCK TABLES `lector` WRITE;
+/*!40000 ALTER TABLE `lector` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lector` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `libro`
+-- Table structure for table `libro`
 --
 
+DROP TABLE IF EXISTS `libro`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `libro` (
   `folio` varchar(20) NOT NULL,
   `titulo` varchar(30) DEFAULT NULL,
   `fecha_publicacion` date DEFAULT NULL,
   `editorial` varchar(30) DEFAULT NULL,
-  `estado` varchar(30) DEFAULT NULL
+  `estado` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`folio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `material`
---
-
-CREATE TABLE `material` (
-  `folio` varchar(20) NOT NULL,
-  `titulo` varchar(40) DEFAULT NULL,
-  `fecha_publicacion` date DEFAULT NULL,
-  `edicion` varchar(20) DEFAULT NULL,
-  `editorial` varchar(20) DEFAULT NULL,
-  `estado` varchar(20) DEFAULT NULL,
-  `autor` varchar(30) DEFAULT NULL,
-  `tipo` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `material`
+-- Dumping data for table `libro`
 --
 
-INSERT INTO `material` (`folio`, `titulo`, `fecha_publicacion`, `edicion`, `editorial`, `estado`, `autor`, `tipo`) VALUES
-('abc', 'Ingeniería de software', NULL, '2014', 'No me acuerdo', '1', 'El pressman', '0');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo_lector`
---
-
-CREATE TABLE `tipo_lector` (
-  `id_tipo` int(11) NOT NULL,
-  `tipo` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+LOCK TABLES `libro` WRITE;
+/*!40000 ALTER TABLE `libro` DISABLE KEYS */;
+/*!40000 ALTER TABLE `libro` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `tipo_usuario`
+-- Table structure for table `usuario`
 --
 
-CREATE TABLE `tipo_usuario` (
-  `id_tipo` int(11) NOT NULL,
-  `tipo` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
---
-
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
   `nombre_usuario` varchar(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
-  `tipo` int(11) NOT NULL
+  `contraseña` varchar(20) DEFAULT NULL,
+  `tipo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`nombre_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`nombre_usuario`, `contraseña`, `tipo`) VALUES
-('alan', 'alanB', 0),
-('omar', 'omarC', 0),
-('susana', 'camilo123', 0);
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES ('alan','alanB',0),('carlos','carlosT',0),('omar','omarC',0),('susana','camilo123',0);
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `lector`
---
-ALTER TABLE `lector`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `libro`
---
-ALTER TABLE `libro`
-  ADD PRIMARY KEY (`folio`);
-
---
--- Indices de la tabla `material`
---
-ALTER TABLE `material`
-  ADD PRIMARY KEY (`folio`);
-
---
--- Indices de la tabla `tipo_lector`
---
-ALTER TABLE `tipo_lector`
-  ADD PRIMARY KEY (`id_tipo`);
-
---
--- Indices de la tabla `tipo_usuario`
---
-ALTER TABLE `tipo_usuario`
-  ADD PRIMARY KEY (`id_tipo`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`nombre_usuario`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `tipo_lector`
---
-ALTER TABLE `tipo_lector`
-  MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `tipo_usuario`
---
-ALTER TABLE `tipo_usuario`
-  MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-04-29  9:18:50

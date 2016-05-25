@@ -11,28 +11,42 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Carlos
- *"nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,numero=?,estado=?  where id=?");*/
+ *"nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?
+ * ,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,
+ * numero=?,estado=?  where id=?");*/
 
 public class Lector {
- private String id,nombre,apellido_p,apellido_m,correo,telefono,calle,cp,colonia,numero;
+ private String id,nombre,apellidoPaterno,apellidoMaterno,correo,telefono,calle,
+     codigoPostal,colonia,numero;
  private int tipo, estado;
  Servicios serv = new Servicios();
  
- public Lector(String id, String nombre, String apellido_p,  String apellido_m,  String
-     correo,  String telefono,  String calle,  String cp,  String colonia,  String numero, int tipo, int estado){
-   this.id = id; this.nombre = nombre; this.apellido_p = apellido_p;
-   this.apellido_m = apellido_m; this.correo = correo;this.telefono=telefono;this.calle=calle;
-   this.cp = cp;this.colonia = colonia; this.numero = numero; this.tipo=tipo; this.estado=estado;
+ public Lector(String id, String nombre, String apellidoPaterno, 
+     String apellidoMaterno,  String correo,  String telefono, String calle,  
+     String codigoPostal,  String colonia,  String numero, int tipo,int estado){
+   this.id = id; this.nombre = nombre; this.apellidoPaterno = apellidoPaterno;
+   this.apellidoMaterno = apellidoMaterno; this.correo = correo;
+   this.telefono=telefono;this.calle=calle;
+   this.codigoPostal = codigoPostal;this.colonia = colonia; 
+   this.numero = numero; this.tipo=tipo; this.estado=estado;
  }
-public void agregarLector(){
+
+  /**
+   *
+   */
+  public void agregarLector(){
  ArrayList<String> camposS = new ArrayList<String>();
  ArrayList<String> datosS = new ArrayList<String>();
  ArrayList<String> camposI = new ArrayList<String>();
  ArrayList<Integer> datosI = new ArrayList<Integer>();
- camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
- camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");camposS.add("colonia");camposS.add("numero");
- datosS.add(getId());datosS.add(getNombre());datosS.add(getApellido_p());datosS.add(getApellido_m());
- datosS.add(getCorreo());datosS.add(getTelefono());datosS.add(getCalle());datosS.add(getCp());
+ camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");
+ camposS.add("apellido_materno");camposS.add("correo");
+ camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");
+ camposS.add("colonia");camposS.add("numero");
+ datosS.add(getId());datosS.add(getNombre());datosS.add(getApellidoPaterno());
+ datosS.add(getApellidoMaterno());
+ datosS.add(getCorreo());datosS.add(getTelefono());datosS.add(getCalle());
+ datosS.add(getCodigoPostal());
  datosS.add(getColonia());datosS.add(getNumero());
  camposI.add("tipo_usuario");
  camposI.add("estado");
@@ -44,15 +58,22 @@ public void agregarLector(){
 
 }
 
-public void actualizarLector(){
+  /**
+   *
+   */
+  public void actualizarLector(){
  ArrayList<String> camposS = new ArrayList<String>();
  ArrayList<String> datosS = new ArrayList<String>();
  ArrayList<String> camposI = new ArrayList<String>();
  ArrayList<Integer> datosI = new ArrayList<Integer>();
- camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
- camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");camposS.add("colonia");camposS.add("numero");
- datosS.add(this.getId());datosS.add(getNombre());datosS.add(getApellido_p());datosS.add(getApellido_m());
- datosS.add(getCorreo());datosS.add(getTelefono());datosS.add(getCalle());datosS.add(getCp());
+ camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");
+ camposS.add("apellido_materno");camposS.add("correo");
+ camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");
+ camposS.add("colonia");camposS.add("numero");
+ datosS.add(this.getId());datosS.add(getNombre());
+ datosS.add(getApellidoPaterno());datosS.add(getApellidoMaterno());
+ datosS.add(getCorreo());datosS.add(getTelefono());datosS.add(getCalle());
+ datosS.add(getCodigoPostal());
  datosS.add(getColonia());datosS.add(getNumero());
  camposI.add("tipo_usuario");
  camposI.add("estado");
@@ -63,9 +84,11 @@ public void actualizarLector(){
 
 
  
-
-
- public String getId() {
+  /**
+   * Getter and Setter
+   * @return
+   */
+  public String getId() {
     return id;
   }
 
@@ -81,20 +104,20 @@ public void actualizarLector(){
     this.nombre = nombre;
   }
 
-  public String getApellido_p() {
-    return apellido_p;
+  public String getApellidoPaterno() {
+    return apellidoPaterno;
   }
 
-  public void setApellido_p(String apellido_p) {
-    this.apellido_p = apellido_p;
+  public void setApellidoPaterno(String apellidoPaterno) {
+    this.apellidoPaterno = apellidoPaterno;
   }
 
-  public String getApellido_m() {
-    return apellido_m;
+  public String getApellidoMaterno() {
+    return apellidoMaterno;
   }
 
-  public void setApellido_m(String apellido_m) {
-    this.apellido_m = apellido_m;
+  public void setApellidoMaterno(String apellidoMaterno) {
+    this.apellidoMaterno = apellidoMaterno;
   }
 
   public String getCorreo() {
@@ -121,12 +144,12 @@ public void actualizarLector(){
     this.calle = calle;
   }
 
-  public String getCp() {
-    return cp;
+  public String getCodigoPostal() {
+    return codigoPostal;
   }
 
-  public void setCp(String cp) {
-    this.cp = cp;
+  public void setCodigoPostal(String codigoPostal) {
+    this.codigoPostal = codigoPostal;
   }
 
   public String getColonia() {

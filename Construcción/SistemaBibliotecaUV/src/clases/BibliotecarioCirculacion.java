@@ -15,16 +15,24 @@ import javax.swing.JOptionPane;
 public class BibliotecarioCirculacion {
  private Servicios serv = new Servicios();
  
-  
-public void agregarLector(Lector lector){
+  /**
+   *
+   * @param lector
+   */
+  public void agregarLector(Lector lector){
  ArrayList<String> camposS = new ArrayList<String>();
  ArrayList<String> datosS = new ArrayList<String>();
  ArrayList<String> camposI = new ArrayList<String>();
  ArrayList<Integer> datosI = new ArrayList<Integer>();
- camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
- camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");camposS.add("colonia");camposS.add("numero");
- datosS.add(lector.getId());datosS.add(lector.getNombre());datosS.add(lector.getApellido_p());datosS.add(lector.getApellido_m());
- datosS.add(lector.getCorreo());datosS.add(lector.getTelefono());datosS.add(lector.getCalle());datosS.add(lector.getCp());
+ camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");
+ camposS.add("apellido_materno");camposS.add("correo");
+ camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");
+ camposS.add("colonia");camposS.add("numero");
+ datosS.add(lector.getId());datosS.add(lector.getNombre());
+ datosS.add(lector.getApellidoPaterno());
+ datosS.add(lector.getApellidoMaterno());
+ datosS.add(lector.getCorreo());datosS.add(lector.getTelefono());
+ datosS.add(lector.getCalle());datosS.add(lector.getCodigoPostal());
  datosS.add(lector.getColonia());datosS.add(lector.getNumero());
  camposI.add("tipo_usuario");
  camposI.add("estado");
@@ -35,21 +43,31 @@ public void agregarLector(Lector lector){
 
 }
 
+  /**
+   * Método para actualizar un lector registrado.
+   * @param lector
+   */
 public void actualizarLector(Lector lector){
  ArrayList<String> camposS = new ArrayList<String>();
  ArrayList<String> datosS = new ArrayList<String>();
  ArrayList<String> camposI = new ArrayList<String>();
  ArrayList<Integer> datosI = new ArrayList<Integer>();
- camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");camposS.add("apellido_materno");camposS.add("correo");
- camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");camposS.add("colonia");camposS.add("numero");
- datosS.add(lector.getId());datosS.add(lector.getNombre());datosS.add(lector.getApellido_p());datosS.add(lector.getApellido_m());
- datosS.add(lector.getCorreo());datosS.add(lector.getTelefono());datosS.add(lector.getCalle());datosS.add(lector.getCp());
+ camposS.add("id");camposS.add("nombre");camposS.add("apellido_paterno");
+ camposS.add("apellido_materno");camposS.add("correo");
+ camposS.add("telefono");camposS.add("calle");camposS.add("codigo_postal");
+ camposS.add("colonia");camposS.add("numero");
+ datosS.add(lector.getId());datosS.add(lector.getNombre());
+ datosS.add(lector.getApellidoPaterno());
+ datosS.add(lector.getApellidoMaterno());
+ datosS.add(lector.getCorreo());datosS.add(lector.getTelefono());
+ datosS.add(lector.getCalle());datosS.add(lector.getCodigoPostal());
  datosS.add(lector.getColonia());datosS.add(lector.getNumero());
  camposI.add("tipo_usuario");
  camposI.add("estado");
  datosI.add(lector.getTipo());
  datosI.add(lector.getEstado());
- serv.actualizar("lector", camposS, datosS, camposI, datosI, "id", lector.getId());
+ serv.actualizar("lector", camposS, datosS, camposI, datosI, "id",
+     lector.getId());
 }
     
   

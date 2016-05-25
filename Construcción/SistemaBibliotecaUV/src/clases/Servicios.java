@@ -82,8 +82,17 @@ public class Servicios {
         return b;
     }
     
-
- public void insertar(String nombreTabla, ArrayList<String> camposString, ArrayList<String> datosString,ArrayList<String> camposInt, ArrayList<Integer> datosInt){
+  /**
+   *
+   * @param nombreTabla
+   * @param camposString
+   * @param datosString
+   * @param camposInt
+   * @param datosInt
+   */
+  public void insertar(String nombreTabla, ArrayList<String> camposString, 
+     ArrayList<String> datosString,ArrayList<String> camposInt,
+     ArrayList<Integer> datosInt){
     int interrogaciones1 = 0;
     int interrogaciones2 = 0;
     String consulta = "insert into"+" "+nombreTabla+" (";   
@@ -112,7 +121,7 @@ public class Servicios {
      }
       consulta=consulta.substring(0, consulta.length()-1);
       consulta = consulta+")";
-       JOptionPane.showMessageDialog(null,consulta);
+      // JOptionPane.showMessageDialog(null,consulta);
     
     try {
             connection = Conexion.getConnection();
@@ -122,7 +131,7 @@ public class Servicios {
               x.setString(posicion,datosString.get(i));
               posicion++;
             }
-             JOptionPane.showMessageDialog(null,posicion);
+             //JOptionPane.showMessageDialog(null,posicion);
       
             for (int i = 0; i < interrogaciones2; i++) {
             x.setInt(posicion,datosInt.get(i));
@@ -149,7 +158,8 @@ public class Servicios {
    * @return Una consulta de la base de datos.
    */
   
-  public PreparedStatement consulta(String nombreTabla,ArrayList<String> campos, String criterioBusqueda,String datoBusqueda){
+  public PreparedStatement consulta(String nombreTabla,ArrayList<String> campos,
+      String criterioBusqueda,String datoBusqueda){
       connection = Conexion.getConnection();
       String consulta = "Select";
       for(String temp: campos){
@@ -184,7 +194,13 @@ public class Servicios {
        return null;
     }
   
-  //Actualizar genérico recibe el nombre de la tabla 4 ArrayList con los nombres de los campos,los datos y 2 strings con el criterio de búsqueda ID = s14011642
+  /**Actualizar genérico recibe el nombre de la tabla 4 ArrayList 
+   * con los nombres de los campos,los datos y 2 strings 
+   * con el criterio de búsqueda ID = s1401164
+   * @param criterioBusqueda
+   * @param camposString
+   * @param datoBusqueda
+   * @param datosInt*/
   public void actualizar(String nombreTabla, ArrayList<String> camposString, ArrayList<String> datosString,ArrayList<String> camposInt, ArrayList<Integer> datosInt,
       String criterioBusqueda,String datoBusqueda){
     int interrogaciones1 = 0;
@@ -233,7 +249,15 @@ public class Servicios {
      }
      }
   
-  public void prueba(Object a ) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException{
+  /**
+   *
+   * @param a
+   * @throws NoSuchFieldException
+   * @throws IllegalArgumentException
+   * @throws IllegalAccessException
+   */
+  public void prueba(Object a ) throws NoSuchFieldException, 
+      IllegalArgumentException, IllegalAccessException{
     System.out.println(a.getClass().getSimpleName());
     Field[] atributos = a.getClass().getFields();
     int i = 0;
@@ -258,7 +282,8 @@ public class Servicios {
   public PreparedStatement buscarLector (String matricula){
        try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("SELECT * from lector where id = ?");
+            PreparedStatement x = connection.prepareStatement("SELECT * "
+                + "from lector where id = ?");
             x.setString(1,matricula);
             ResultSet rs = x.executeQuery();
             if(rs.next()){
@@ -286,7 +311,8 @@ public class Servicios {
       boolean bandera = false;
        try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("SELECT * from "+tabla+" where "+campo+" = ?");
+            PreparedStatement x = connection.prepareStatement("SELECT * "
+                + "from "+tabla+" where "+campo+" = ?");
             x.setString(1,dato);
             ResultSet rs = x.executeQuery();
             if(rs.next()){
@@ -321,13 +347,24 @@ public class Servicios {
    * @param numero
    * @param estado
    */
-  public void actualizar(String mat,String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String telefono, int tipo, String calle, String cp, String colonia, String numero,
+  public void actualizar(String mat,String nombre, String apellidoPaterno,
+      String apellidoMaterno, String correo, String telefono, 
+      int tipo, String calle, String cp, String colonia, String numero,
       int estado){
        try {
             connection = Conexion.getConnection();
-            PreparedStatement x = connection.prepareStatement("UPDATE lector set nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,numero=?,estado=?  where id=?");
-            x.setString(1, nombre);x.setString(2, apellidoPaterno);x.setString(3,apellidoMaterno);x.setString(4, correo);x.setString(5,telefono);x.setInt(6,tipo);
-            x.setString(7, calle);x.setString(8,cp);x.setString(9, colonia);x.setString(10,numero);x.setInt(11, estado);x.setString(12, mat);
+            PreparedStatement x = 
+                connection.prepareStatement("UPDATE lector set nombre=?,"
+                    + " apellido_paterno=?,apellido_materno=?,"
+                    + "correo=?,telefono=?,tipo_usuario=?,calle=?,"
+                    + "codigo_postal=?,colonia=?,"
+                    + "numero=?,estado=?  where id=?");
+            x.setString(1, nombre);x.setString(2, apellidoPaterno);
+            x.setString(3,apellidoMaterno);x.setString(4, correo);
+            x.setString(5,telefono);x.setInt(6,tipo);
+            x.setString(7, calle);x.setString(8,cp);
+            x.setString(9, colonia);x.setString(10,numero);
+            x.setInt(11, estado);x.setString(12, mat);
             x.executeUpdate();
             JOptionPane.showMessageDialog(null, "LECTOR ACTUALIZADO");
             connection.close();
@@ -345,8 +382,10 @@ public class Servicios {
     
     /** Funcion de Encriptación.
      */
-    private static String encrypt(String property) throws GeneralSecurityException, UnsupportedEncodingException {
-        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithMD5AndDEs");
+    private static String encrypt(String property) 
+        throws GeneralSecurityException, UnsupportedEncodingException {
+        SecretKeyFactory keyFactory = 
+            SecretKeyFactory.getInstance("PBEWithMD5AndDEs");
         SecretKey key = keyFactory.generateSecret(new PBEKeySpec(PASSWORD));
         Cipher pbeCipher = Cipher.getInstance("PBEWithMD5AndDES");
         pbeCipher.init(Cipher.ENCRYPT_MODE, key, new PBEParameterSpec(SALT, 20));
@@ -360,11 +399,14 @@ public class Servicios {
     }
     /**Funcion de Desencriptar.
      */
-    private static String decrypt(String property) throws GeneralSecurityException, IOException {
-        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithMD5AndDES");
+    private static String decrypt(String property) 
+        throws GeneralSecurityException, IOException {
+        SecretKeyFactory keyFactory = 
+            SecretKeyFactory.getInstance("PBEWithMD5AndDES");
         SecretKey key = keyFactory.generateSecret(new PBEKeySpec(PASSWORD));
         Cipher pbeCipher = Cipher.getInstance("PBEWithMD5AndDES");
-        pbeCipher.init(Cipher.DECRYPT_MODE, key, new PBEParameterSpec(SALT, 20));
+        pbeCipher.init(Cipher.DECRYPT_MODE, key,
+            new PBEParameterSpec(SALT, 20));
         return new String(pbeCipher.doFinal(base64Decode(property)), "UTF-8");
     }
 

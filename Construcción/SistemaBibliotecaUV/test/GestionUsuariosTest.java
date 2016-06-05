@@ -36,40 +36,78 @@ public class GestionUsuariosTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of inhabilitarCampos method, of class GestionUsuarios.
-     */
     @Test
     public void testInhabilitarCampos() {
-        System.out.println("inhabilitarEtiquetas");
+        System.out.println("inhabilitarCampos");
         GestionUsuarios instance = new GestionUsuarios();
-        //instance.inhabilitarCampos();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.inhabilitarCampos();
+        //fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of habilitarCampos method, of class GestionUsuarios.
-     */
     @Test
-    public void testHabilitarEtiquetas() {
-        System.out.println("habilitarEtiquetas");
+    public void testHabilitarCampos() {
+        System.out.println("habilitarCampos");
         GestionUsuarios instance = new GestionUsuarios();
-        //instance.habilitarCampos();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.habilitarCampos();
+        //fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of main method, of class GestionUsuarios.
-     */
+    @Test
+    public void testActionClickCancelar() {
+        System.out.println("actionClickCancelar");
+        GestionUsuarios instance = new GestionUsuarios();
+        instance.actionClickCancelar();
+        //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testActionClickBaja() {
+        System.out.println("actionClickBaja");
+        GestionUsuarios instance = new GestionUsuarios();
+        instance.actionClickBaja();
+        //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testActionClickBuscar() {
+        System.out.println("actionClickBuscar");
+        GestionUsuarios instance = new GestionUsuarios();
+        instance.actionClickBuscar();
+        //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testVerificarCampos() {
+        System.out.println("verificarCampos");
+        GestionUsuarios instance = new GestionUsuarios();
+        boolean expResult = false;
+        boolean result = instance.verificarCampos();
+        assertEquals(expResult, result);
+        //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testNotificacionCamposOblitagorios() {
+        System.out.println("notificacionCamposOblitagorios");
+        GestionUsuarios instance = new GestionUsuarios();
+        instance.notificacionCamposOblitagorios();
+        //fail("The test case is a prototype.");
+    }
+
+    @Test
+    public void testActionClickGuardar() {
+        System.out.println("actionClickGuardar");
+        GestionUsuarios instance = new GestionUsuarios();
+        instance.actionClickGuardar();
+        //fail("The test case is a prototype.");
+    }
+
     @Test
     public void testMain() {
         System.out.println("main");
         String[] args = null;
         GestionUsuarios.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

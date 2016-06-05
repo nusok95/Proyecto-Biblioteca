@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -34,12 +35,13 @@ public class GestionMaterial extends javax.swing.JFrame {
     inhabilitarCampos();
   }
 
-  
+  /**
+   *Función que inhabilita los campos del JFrame
+   */
   public void inhabilitarCampos(){
     this.txtBusqueda.setText("Búsqueda");
     this.txtBusqueda.setForeground(Color.GRAY);  
     this.txtTitulo.setEditable(false);
-    //this.txtFechaPublicacion.setEditable(false);
     this.txtAutor.setEditable(false);
     this.txtEditorial.setEditable(false);
     this.txtEdicion.setEditable(false);
@@ -51,7 +53,6 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.etqBusqueda.setForeground(Color.WHITE);
     this.cbTipoMaterial.setEnabled(false);
     this.txtTitulo.setText("");
-   // this.txtFechaPublicacion.setText("");
     this.txtAutor.setText("");
     this.txtEditorial.setText("");
     this.txtEdicion.setText("");
@@ -63,14 +64,15 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.txtCampoObligatorio4.setForeground(Color.white);
     this.txtCampoObligatorio5.setForeground(Color.white);
     this.txtCampoObligatorio6.setForeground(Color.white);
+    this.jdCalendario.setEnabled(false);
   }
 
   /**
-   *Funcion para Inhabilitar Etiquetas
+   *Función que habilita los campos del JFrame
    */
   public void habilitarCampos(){
     this.txtBusqueda.setEditable(true);
-     // this.txtFechaPublicacion.setEditable(true);
+    this.jdCalendario.setEnabled(true);
     this.txtTitulo.setEditable(true);
     this.txtAutor.setEditable(true);
     this.txtEditorial.setEditable(true);
@@ -95,6 +97,7 @@ public class GestionMaterial extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    jDateChooser1 = new com.toedter.calendar.JDateChooser();
     jTabbedPane3 = new javax.swing.JTabbedPane();
     jPanel6 = new javax.swing.JPanel();
     btnGuardar = new javax.swing.JButton();
@@ -125,6 +128,8 @@ public class GestionMaterial extends javax.swing.JFrame {
     txtCampoObligatorio4 = new javax.swing.JLabel();
     txtCampoObligatorio6 = new javax.swing.JLabel();
     txtCampoObligatorio5 = new javax.swing.JLabel();
+    etqEdicion1 = new javax.swing.JLabel();
+    jdCalendario = new com.toedter.calendar.JCalendar();
     jPanel2 = new javax.swing.JPanel();
     jPanel8 = new javax.swing.JPanel();
     etq2Matricula4 = new javax.swing.JLabel();
@@ -325,6 +330,9 @@ public class GestionMaterial extends javax.swing.JFrame {
     txtCampoObligatorio5.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
     txtCampoObligatorio5.setText("**");
 
+    etqEdicion1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+    etqEdicion1.setText("Fecha ");
+
     javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
@@ -353,7 +361,7 @@ public class GestionMaterial extends javax.swing.JFrame {
                 .addComponent(etqAutor)
                 .addGap(465, 465, 465)
                 .addComponent(txtEditorial))
-              .addGroup(jPanel6Layout.createSequentialGroup()
+              .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                 .addComponent(etqTitulo)
                 .addGap(34, 34, 34)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -369,31 +377,33 @@ public class GestionMaterial extends javax.swing.JFrame {
                     .addComponent(txtCampoObligatorio3)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(etqEdicion)
+                  .addComponent(etqEditorial)
+                  .addComponent(etqEdicion1))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(txtEdicion)
                   .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addComponent(etqEdicion)
-                    .addGap(43, 43, 43)
-                    .addComponent(txtEdicion))
-                  .addGroup(jPanel6Layout.createSequentialGroup()
-                    .addComponent(etqEditorial)
+                    .addComponent(jdCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))))
             .addGap(113, 113, 113))
           .addGroup(jPanel6Layout.createSequentialGroup()
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-              .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(btnCancelar)
-                .addGap(233, 233, 233)
-                .addComponent(btnGuardar)
-                .addGap(160, 160, 160)
-                .addComponent(btnBaja)
-                .addGap(63, 63, 63))
               .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                 .addComponent(etqTipoMaterial)
                 .addGap(18, 18, 18)
                 .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 504, Short.MAX_VALUE))
               .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(txtCampoObligatorio6)
-                .addGap(657, 657, 657)))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                  .addComponent(btnCancelar)
+                  .addComponent(txtCampoObligatorio6))
+                .addGap(231, 231, 231)
+                .addComponent(btnGuardar)
+                .addGap(161, 161, 161)
+                .addComponent(btnBaja)
+                .addGap(63, 63, 63)))
             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
     );
     jPanel6Layout.setVerticalGroup(
@@ -402,7 +412,7 @@ public class GestionMaterial extends javax.swing.JFrame {
         .addComponent(panelBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel6Layout.createSequentialGroup()
-            .addGap(33, 189, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel9))
           .addGroup(jPanel6Layout.createSequentialGroup()
             .addGap(38, 38, 38)
@@ -429,20 +439,24 @@ public class GestionMaterial extends javax.swing.JFrame {
               .addComponent(txtCampoObligatorio2)
               .addComponent(txtCampoObligatorio3))
             .addGap(32, 32, 32)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                  .addComponent(etqTipoMaterial)
+                  .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(txtCampoObligatorio4)
+                  .addComponent(etqEdicion1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                  .addComponent(txtCampoObligatorio6)
+                  .addComponent(txtCampoObligatorio5)))
+              .addComponent(jdCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(etqTipoMaterial)
-              .addComponent(cbTipoMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(txtCampoObligatorio4))
-            .addGap(18, 18, 18)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(txtCampoObligatorio6)
-              .addComponent(txtCampoObligatorio5))
-            .addGap(64, 64, 64)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(btnCancelar)
+              .addComponent(btnBaja)
               .addComponent(btnGuardar)
-              .addComponent(btnBaja))
-            .addContainerGap(22, Short.MAX_VALUE))))
+              .addComponent(btnCancelar))
+            .addContainerGap())))
     );
 
     jTabbedPane3.addTab("Buscar material", jPanel6);
@@ -533,7 +547,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 963, Short.MAX_VALUE)
+      .addGap(0, 1019, Short.MAX_VALUE)
       .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel2Layout.createSequentialGroup()
           .addGap(0, 0, Short.MAX_VALUE)
@@ -649,7 +663,7 @@ public class GestionMaterial extends javax.swing.JFrame {
     jPanel3.setLayout(jPanel3Layout);
     jPanel3Layout.setHorizontalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 963, Short.MAX_VALUE)
+      .addGap(0, 1019, Short.MAX_VALUE)
       .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel3Layout.createSequentialGroup()
           .addGap(0, 0, Short.MAX_VALUE)
@@ -778,7 +792,7 @@ public class GestionMaterial extends javax.swing.JFrame {
         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
         .addComponent(etqVolver)
         .addGap(18, 18, 18)
         .addComponent(etqSalir)
@@ -809,7 +823,7 @@ public class GestionMaterial extends javax.swing.JFrame {
       .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       .addGroup(layout.createSequentialGroup()
         .addGap(46, 46, 46)
-        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 968, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
@@ -817,14 +831,17 @@ public class GestionMaterial extends javax.swing.JFrame {
       .addGroup(layout.createSequentialGroup()
         .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
-        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, Short.MAX_VALUE)
+        .addGap(18, 18, 18)
         .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  /**
+   *Función que al presionar cancelar inhabilita los campos
+   */
   public void actionClickCancelar(){
     inhabilitarCampos();
     }
@@ -861,7 +878,10 @@ public class GestionMaterial extends javax.swing.JFrame {
   }//GEN-LAST:event_btnCancelarKeyPressed
 
   private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-    actionClickCancelar();
+    int desicion = JOptionPane.showConfirmDialog(null, "¿Desea continuar?");
+        if (desicion == 0){
+          actionClickCancelar();
+        }  
   }//GEN-LAST:event_btnCancelarActionPerformed
 
   private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
@@ -907,7 +927,10 @@ public class GestionMaterial extends javax.swing.JFrame {
   }//GEN-LAST:event_btnGuardarKeyPressed
 
   private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-    actionClickGuardar();
+    int desicion = JOptionPane.showConfirmDialog(null, "¿Desea continuar?");
+        if (desicion == 0){
+          actionClickGuardar();
+        }  
   }//GEN-LAST:event_btnGuardarActionPerformed
 
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -921,9 +944,25 @@ public class GestionMaterial extends javax.swing.JFrame {
   private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_jComboBox1ActionPerformed
+   
+  /**
+   * Función que a partir del componente JCalendar arma una fecha para poder insertar en MySQL
+   * @return fecha
+   */
+  public String obtenerFecha(){
+    String dia = Integer.toString(jdCalendario.getCalendar().get(Calendar.DAY_OF_MONTH));
+    String mes = Integer.toString(jdCalendario.getCalendar().get(Calendar.MONTH) + 1);
+    String year = Integer.toString(jdCalendario.getCalendar().get(Calendar.YEAR));
+    String fecha = (year + "-" + mes+ "-" + dia);
+    return fecha;
+  }
   
+  /**
+   *Función que busca un material en los registros de las tablas, si encuentra se 
+   *muestran los datos en el JFrame
+   */
   public void actionClickBuscar(){
-    ArrayList campos = new ArrayList<String>();
+  ArrayList campos = new ArrayList<String>();
     campos.add("*");
       if(serv.confirmarExistencia("material","folio", txtBusqueda.getText())){
         this.etqEditaMaterial.setForeground(Color.WHITE);
@@ -942,13 +981,14 @@ public class GestionMaterial extends javax.swing.JFrame {
                 this.txtBusqueda.setText(rs.getString("folio"));
                 this.txtEdicion.setText(rs.getString("edicion"));
                 this.cbTipoMaterial.setSelectedIndex(rs.getInt("tipo"));
+                this.jdCalendario.setDate(rs.getDate("fecha_publicacion"));
                  }
                  x.close();
              } catch (SQLException ex) {
                  System.out.println("No se puede establecer conexión");
              }
           }catch(java.lang.NullPointerException ex) {
-             System.out.println("ArrayList nulo");
+             System.out.println("Apuntador nulo");
          } catch (SQLException ex) {
              System.out.println("No se puede ejecutar el SQL");
          }
@@ -960,6 +1000,10 @@ public class GestionMaterial extends javax.swing.JFrame {
         }        
     }
   
+  /**
+   * Función que verifica que los campos obligarios esten llenos.
+   * @return verificador
+   */
   public boolean verificarCampos(){
       boolean verificador = true;
         if(this.txtTitulo.getText().isEmpty() || 
@@ -971,6 +1015,10 @@ public class GestionMaterial extends javax.swing.JFrame {
         return verificador;
     }
 
+  /**
+   * Función que habilita etiquetas de los campos obligatorios que deben
+   * ser llenados
+   */
   public void notificacionCamposOblitagorios(){
     this.txtCampoObligatorio.setForeground(Color.red);
     this.txtCampoObligatorio1.setForeground(Color.red);
@@ -981,23 +1029,20 @@ public class GestionMaterial extends javax.swing.JFrame {
     this.txtCampoObligatorio6.setForeground(Color.red);
   }
 
-  
-  
-    
+  /**
+   *Función que instancia un objeto de tipo material, para después guardarlo
+   * en la base de datos de MySQL
+   */
   public void actionClickGuardar(){
     if(!serv.confirmarExistencia("material", "folio", txtBusqueda.getText())){
       if(this.verificarCampos()){
         Material material = new Material(this.txtBusqueda.getText(),
-        this.txtTitulo.getText(), this.txtEdicion.getText(),
-        this.txtEditorial.getText(),this.txtAutor.getText(),
-        //this.txtFechaPublicacion.getText(),
-        this.cbTipoMaterial.getSelectedIndex(), 1);
-        String message="¿Seguro de que quiere guardar el registro?";
-        int respuesta=JOptionPane.showConfirmDialog(null, message, "Espere", JOptionPane.YES_NO_OPTION);
-        if (respuesta == JOptionPane.YES_OPTION){
+                 this.txtTitulo.getText(), this.txtEdicion.getText(),
+                 this.txtEditorial.getText(),this.txtAutor.getText(),
+                 obtenerFecha(),this.cbTipoMaterial.getSelectedIndex(), 1);
         material.agregarMaterial();
         inhabilitarCampos();
-        }
+        
       }else{
         this.notificacionCamposOblitagorios();
       }
@@ -1006,8 +1051,8 @@ public class GestionMaterial extends javax.swing.JFrame {
         Material material = new Material(this.txtBusqueda.getText(),
         this.txtTitulo.getText(), this.txtEdicion.getText(),
         this.txtEditorial.getText(),this.txtAutor.getText(),
-        //this.txtFechaPublicacion.getText(),
-                this.cbTipoMaterial.getSelectedIndex(), 1);
+        obtenerFecha(),this.cbTipoMaterial.getSelectedIndex(), 1);
+
         material.actualizarMaterial();
         inhabilitarCampos();
       }else{
@@ -1016,6 +1061,9 @@ public class GestionMaterial extends javax.swing.JFrame {
     }
             
   }
+  
+    
+  
   
   /**
    * @param args the command line arguments
@@ -1066,6 +1114,7 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JLabel etqAyuda;
   private javax.swing.JLabel etqBusqueda;
   private javax.swing.JLabel etqEdicion;
+  private javax.swing.JLabel etqEdicion1;
   private javax.swing.JLabel etqEditaMaterial;
   private javax.swing.JLabel etqEditorial;
   private javax.swing.JLabel etqNuevoMaterial;
@@ -1075,6 +1124,7 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JLabel etqVolver;
   private javax.swing.JButton jButton1;
   private javax.swing.JComboBox<String> jComboBox1;
+  private com.toedter.calendar.JDateChooser jDateChooser1;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel24;
   private javax.swing.JLabel jLabel30;
@@ -1096,6 +1146,7 @@ public class GestionMaterial extends javax.swing.JFrame {
   private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JTabbedPane jTabbedPane3;
   private javax.swing.JTextField jTextField1;
+  private com.toedter.calendar.JCalendar jdCalendario;
   private javax.swing.JPanel panelBusqueda;
   private javax.swing.JTextField txtAutor;
   private javax.swing.JTextField txtBusqueda;

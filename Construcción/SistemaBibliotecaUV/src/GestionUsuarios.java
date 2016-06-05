@@ -36,7 +36,9 @@ public class GestionUsuarios extends javax.swing.JFrame {
     inhabilitarCampos();
   }
   
-  
+  /**
+   *Función que inhabilita los campos del JFrame
+   */
   public void inhabilitarCampos(){
     this.txtBusqueda.setText("Búsqueda");
     this.txtBusqueda.setForeground(Color.GRAY); 
@@ -76,7 +78,9 @@ public class GestionUsuarios extends javax.swing.JFrame {
     this.txtCampoObligatorio7.setForeground(Color.white);
    }
 
-  
+  /**
+   *Función que habilita los campos del JFrame
+   */
   public void habilitarCampos(){
     this.txtBusqueda.setEditable(true);
     this.txtNombre.setEditable(true);
@@ -1099,8 +1103,10 @@ public class GestionUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApellidoPaternoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        actionClickCancelar();
-
+      int desicion = JOptionPane.showConfirmDialog(null, "¿Desea cancelar?");
+        if (desicion == 0){
+          actionClickCancelar();
+        }  
     }//GEN-LAST:event_btnCancelarActionPerformed
     public void actionClickCancelar(){
       inhabilitarCampos();
@@ -1130,13 +1136,21 @@ public class GestionUsuarios extends javax.swing.JFrame {
     private void btnBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBajaActionPerformed
       this.actionClickBaja();
     }//GEN-LAST:event_btnBajaActionPerformed
-    public void actionClickBaja(){
+    
+  /**
+   *En construcción
+   */
+  public void actionClickBaja(){
       int resp = JOptionPane.showConfirmDialog(null, "¿Está seguro de dar de baja al usuario?");
       if(resp==1){
       }
     }
     
-    public void actionClickBuscar(){
+  /**
+   *Función que busca un usuario en los registros de las tablas, si encuentra se 
+   *muestran los datos en el JFrame
+   */
+  public void actionClickBuscar(){
       ArrayList campos = new ArrayList<String>();
       campos.add("*");
         if(serv.confirmarExistencia("lector","id",txtBusqueda.getText())){
@@ -1199,6 +1213,10 @@ public class GestionUsuarios extends javax.swing.JFrame {
         return verificador;
     }
   
+  /**
+   * Función que habilita etiquetas de los campos obligatorios que deben
+   * ser llenados
+   */
   public void notificacionCamposOblitagorios(){
     this.txtCampoObligatorio.setForeground(Color.red);
     this.txtCampoObligatorio1.setForeground(Color.red);
@@ -1211,10 +1229,17 @@ public class GestionUsuarios extends javax.swing.JFrame {
   }
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-      actionClickGuardar();
+      int desicion = JOptionPane.showConfirmDialog(null, "¿Desea confirmar?");
+        if (desicion == 0){
+          actionClickGuardar();
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    public void actionClickGuardar(){
+  /**
+   *Función que instancia un objeto de tipo lector, para después guardarlo
+   * en la base de datos de MySQL   
+   */
+  public void actionClickGuardar(){
       if(!serv.confirmarExistencia("lector","id",txtBusqueda.getText())){
         if(this.verificarCampos()){
           Lector lector = new Lector(this.txtBusqueda.getText(),

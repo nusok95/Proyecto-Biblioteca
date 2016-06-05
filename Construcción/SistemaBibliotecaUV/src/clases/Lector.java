@@ -11,17 +11,30 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Carlos
- *"nombre=?, apellido_paterno=?,apellido_materno=?,correo=?,telefono=?
- * ,tipo_usuario=?,calle=?,codigo_postal=?,colonia=?,
- * numero=?,estado=?  where id=?");*/
+ **/
 
 public class Lector {
- private String id,nombre,apellidoPaterno,apellidoMaterno,correo,telefono,calle,
-     codigoPostal,colonia,numero;
- private int tipo, estado;
- Servicios serv = new Servicios();
+  private String id,nombre,apellidoPaterno,apellidoMaterno,correo,telefono,calle,
+                codigoPostal,colonia,numero;
+  private int tipo, estado;
+  private Servicios serv = new Servicios();
  
- public Lector(String id, String nombre, String apellidoPaterno, 
+  /**
+   * Constructor de la clase Lector
+   * @param id
+   * @param nombre
+   * @param apellidoPaterno
+   * @param apellidoMaterno
+   * @param correo
+   * @param telefono
+   * @param calle
+   * @param codigoPostal
+   * @param colonia
+   * @param numero
+   * @param tipo
+   * @param estado
+   */
+  public Lector(String id, String nombre, String apellidoPaterno, 
      String apellidoMaterno,  String correo,  String telefono, String calle,  
      String codigoPostal,  String colonia,  String numero, int tipo,int estado){
    this.id = id; this.nombre = nombre; this.apellidoPaterno = apellidoPaterno;
@@ -32,7 +45,8 @@ public class Lector {
  }
 
   /**
-   *
+   *Función que inserta los datos del lector dentro de la tabla Lector de 
+   *MySQL
    */
   public void agregarLector(){
  ArrayList<String> camposS = new ArrayList<String>();
@@ -59,7 +73,8 @@ public class Lector {
 }
 
   /**
-   *
+   *Función que actualiza los datos del lector dentro de la tabla Lector de 
+   *MySQL
    */
   public void actualizarLector(){
  ArrayList<String> camposS = new ArrayList<String>();

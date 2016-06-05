@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package clases;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author susana
  */
-public class GestionDePrestamosTest {
+public class MaterialTest {
     
-    public GestionDePrestamosTest() {
+    public MaterialTest() {
     }
     
     @BeforeClass
@@ -36,16 +37,22 @@ public class GestionDePrestamosTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of main method, of class GestionDePrestamos.
-     */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        GestionDePrestamos.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testAgregarMaterial() {
+        System.out.println("agregarMaterial");
+        Material instance = new Material("1234", "Aura", "8", "Trillas", "Carlos Fuentes", "02-14-16", 1, 1);
+        instance.agregarMaterial();
+        
     }
+
+    @Test
+    public void testActualizarMaterial() {
+        System.out.println("actualizarMaterial");
+        Material instance = new Material("1234", "Aura", "8", "Trillas", "Carlos Fuentes", "02-14-16", 1, 0);
+        instance.actualizarMaterial();
+        
+    }
+
+  
     
 }

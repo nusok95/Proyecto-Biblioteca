@@ -556,10 +556,15 @@ public class IniciarSesion extends javax.swing.JFrame {
   }//GEN-LAST:event_jTextField9ActionPerformed
 
   private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-      acctionClickEntrar();
+      actionClickEntrar();
   }//GEN-LAST:event_btnEntrarActionPerformed
 
-  public void acctionClickEntrar(){
+  /**
+   *Función que verifica si el usuario y contraseña están en la base de datos,
+   * si se encuentra se redirige al menú principal, en caso contrario, el sistema
+   * mostrará un mensaje de advertencia.
+   */
+  public void actionClickEntrar(){
     Servicios serv = new Servicios();
      serv.login(this.txtUsuario.getText(),this.txtPassword.getText());
     if(serv.login(this.txtUsuario.getText(),this.txtPassword.getText())){
@@ -570,7 +575,7 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     }
     else{
-      JOptionPane.showMessageDialog(this, "      Usuario o contraseña incorrecta", "EXO UV",JOptionPane.WARNING_MESSAGE);
+      JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrecta", "EXO UV",JOptionPane.WARNING_MESSAGE);
       this.txtUsuario.setText("");
       this.txtPassword.setText("");
     }     
@@ -584,14 +589,14 @@ public class IniciarSesion extends javax.swing.JFrame {
     private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
         // TODO add your handling code here:
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){ 
-            acctionClickEntrar();
+            actionClickEntrar();
         }
     }//GEN-LAST:event_txtPasswordKeyPressed
 
     private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
         // TODO add your handling code here:
          if(evt.getKeyCode() == KeyEvent.VK_ENTER){ 
-            acctionClickEntrar();
+            actionClickEntrar();
         }
     }//GEN-LAST:event_btnEntrarKeyPressed
 

@@ -51,15 +51,14 @@ public class ServiciosTest {
         boolean expResult = true;
         boolean result = instance.login(nombre, password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
      * Test of registrarUsuario method, of class Servicios.
      */
     @Test
-    public void testRegistrarUsuario() {
-        System.out.println("registrarUsuario");
+    public void testInsertar() {
+        System.out.println("insertar datos");
         String mat = "";
         String nombre = "";
         String apellidoPaterno = "";
@@ -73,9 +72,10 @@ public class ServiciosTest {
         String cp = "";
         int estado = 0;
         Servicios instance = new Servicios();
-        //instance.registrarUsuario(mat, nombre, apellidoPaterno, apellidoMaterno, correo, telefono, tipo, calle, colonia, numero, cp, estado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Lector lector = new Lector(mat,nombre,apellidoPaterno,
+                                   apellidoMaterno,correo,telefono,calle,
+                                   cp,colonia,numero,tipo,estado);
+        lector.agregarLector();
     }
 
     /**
@@ -85,52 +85,32 @@ public class ServiciosTest {
     public void testConsulta() {
         System.out.println("consulta");
         String nombreTabla = "";
-        ArrayList<String> campos = null;
+        ArrayList<String> campos = new ArrayList();
         String criterioBusqueda = "";
         String datoBusqueda = "";
         Servicios instance = new Servicios();
         PreparedStatement expResult = null;
         PreparedStatement result = instance.consulta(nombreTabla, campos, criterioBusqueda, datoBusqueda);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of buscarLector method, of class Servicios.
      */
     @Test
-    public void testBuscarLector() {
-        System.out.println("buscarLector");
-        String matricula = "";
-        Servicios instance = new Servicios();
-        PreparedStatement expResult = null;
-        PreparedStatement result = instance.buscarLector(matricula);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testconfirmarExistencia() {
+       ArrayList campos = new ArrayList<String>();
+       Servicios instance = new Servicios();
+       campos.add("*");
+       String nombreTabla = "";
+       String id = "";
+       String mat = "";
+       instance.confirmarExistencia(nombreTabla,id,mat);
     }
 
-    /**
-     * Test of confirmarExistenciaLector method, of class Servicios.
-     */
+    
     @Test
-    public void testConfirmarExistenciaLector() {
-//        System.out.println("confirmarExistenciaLector");
-//        String matricula = "";
-//        Servicios instance = new Servicios();
-//        boolean expResult = false;
-//        boolean result = instance.confirmarExistenciaLector(matricula);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of actualizarLector method, of class Servicios.
-     */
-    @Test
-    public void testActualizarLector() {
+    public void testActualizar() {
         System.out.println("actualizarLector");
         String mat = "";
         String nombre = "";
@@ -145,10 +125,10 @@ public class ServiciosTest {
         String numero = "";
         int estado = 0;
         Servicios instance = new Servicios();
-        instance.actualizar(mat, nombre, apellidoPaterno, apellidoMaterno,
-            correo, telefono, tipo, calle, cp, colonia, numero, estado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Lector lector = new Lector(mat,nombre,apellidoPaterno,
+                                   apellidoMaterno,correo,telefono,calle,
+                                   cp,colonia,numero,tipo,estado);
+        lector.agregarLector();
     }
     
 }

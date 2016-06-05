@@ -19,25 +19,9 @@ public class main {
    * @param args the command line arguments
    */
   public static void main(String[] args) throws IllegalArgumentException, NoSuchFieldException, IllegalAccessException {
-    /*String cadena;
-     int x = Integer.parseInt("123");
-     double n = Double.parseDouble("123");
-    String nombre = "Carlos"; String campo="tabla";
-    cadena = nombre+campo;
-    System.out.println(cadena)*/
-   /* Lector a = new Lector();
-    Material m = new Material();
-    Servicios serv = new Servicios();
-    serv.prueba(a);
-    serv.prueba(m);*/
     IniciarSesion menu = new IniciarSesion();
     menu.setVisible(true);
     menu.setResizable(false);
-  
-  /*GestionDePrestamos guiGestion = new GestionDePrestamos();
-  guiGestion.setVisible(true);
-  menu.setResizable(false);
-  */
   }
   
 }

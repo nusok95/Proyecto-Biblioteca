@@ -15,22 +15,34 @@ import javax.swing.JOptionPane;
 public class Material {
   private String folio, titulo, edicion, editorial, autor, fechaPublicacion;
   private int tipoMaterial, estado;
-  Servicios serv= new Servicios();
+  private Servicios serv = new Servicios();
 
+  /**
+   * Constructor de la clase Material
+   * @param folio
+   * @param titulo
+   * @param edicion
+   * @param editorial
+   * @param autor
+   * @param fechaPublicacion
+   * @param tipoMaterial
+   * @param estado
+   */
   public Material(String folio, String titulo, String edicion, String editorial,
-      String autor, int tipoMaterial, int estado){
+      String autor, String fechaPublicacion,int tipoMaterial, int estado){
     this.folio = folio;
     this.titulo = titulo;
     this.edicion = edicion;
     this.editorial = editorial;
     this.estado = estado;
     this.autor = autor;
-    //this.fechaPublicacion = fechaPublicacion;
+    this.fechaPublicacion = fechaPublicacion;
     this.tipoMaterial = tipoMaterial;
   }
   
   /**
-   *Método para agregar un material.
+   *Función que agrega los datos de un material dentro de la tabla Material de 
+   * MySQL
    */
  public void agregarMaterial(){
       ArrayList<String> camposS = new ArrayList<String>();
@@ -38,10 +50,10 @@ public class Material {
       ArrayList<String> camposI = new ArrayList<String>();
       ArrayList<Integer> datosI = new ArrayList<Integer>();
      camposS.add("folio");camposS.add("titulo");
-     /*camposS.add("fechaPublicacion");*/
+     camposS.add("fecha_publicacion");
      camposS.add("edicion");camposS.add("editorial");camposS.add("autor");
      datosS.add(getFolio());datosS.add(getTitulo());
-     /*datosS.add(getFecha_publicacion());*/datosS.add(getEdicion());
+     datosS.add(getFechaPublicacion());datosS.add(getEdicion());
      datosS.add(getEditorial());datosS.add(getAutor());
      camposI.add("tipo");camposI.add("estado");
      datosI.add(getTipo()); datosI.add(getEstado());
@@ -57,10 +69,10 @@ public void actualizarMaterial(){
       ArrayList<String> camposI = new ArrayList<String>();
       ArrayList<Integer> datosI = new ArrayList<Integer>();
      camposS.add("folio");camposS.add("titulo");
-     /*camposS.add("fechaPublicacion");*/
+     camposS.add("fecha_publicacion");
      camposS.add("edicion");camposS.add("editorial");camposS.add("autor");
      datosS.add(getFolio());datosS.add(getTitulo());
-     /*datosS.add(getFecha_publicacion());*/
+     datosS.add(getFechaPublicacion());
      datosS.add(getEdicion());
      datosS.add(getEditorial());datosS.add(getAutor());
      camposI.add("tipo");camposI.add("estado");

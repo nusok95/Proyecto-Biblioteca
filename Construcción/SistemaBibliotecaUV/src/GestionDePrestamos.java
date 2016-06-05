@@ -76,7 +76,6 @@ public class GestionDePrestamos extends javax.swing.JFrame {
     jTextField15 = new javax.swing.JTextField();
     jTextField16 = new javax.swing.JTextField();
     jTextField17 = new javax.swing.JTextField();
-    jTextField18 = new javax.swing.JTextField();
     jLabel21 = new javax.swing.JLabel();
     jComboBox4 = new javax.swing.JComboBox();
     jButton8 = new javax.swing.JButton();
@@ -85,7 +84,10 @@ public class GestionDePrestamos extends javax.swing.JFrame {
     jButton9 = new javax.swing.JButton();
     jButton10 = new javax.swing.JButton();
     jPanel22 = new javax.swing.JPanel();
+    dcCalendario = new com.toedter.calendar.JDateChooser();
     jPanel2 = new javax.swing.JPanel();
+    jScrollPane1 = new javax.swing.JScrollPane();
+    jTableEjemplo = new javax.swing.JTable();
     jPanel3 = new javax.swing.JPanel();
     jPanel6 = new javax.swing.JPanel();
     etqNombre2 = new javax.swing.JLabel();
@@ -112,6 +114,7 @@ public class GestionDePrestamos extends javax.swing.JFrame {
     etqVolver = new javax.swing.JLabel();
     jPanel20 = new javax.swing.JPanel();
     jLabel8 = new javax.swing.JLabel();
+    jButton1 = new javax.swing.JButton();
 
     jTabbedPane2.setBackground(new java.awt.Color(204, 204, 255));
     jTabbedPane2.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -467,14 +470,14 @@ public class GestionDePrestamos extends javax.swing.JFrame {
           .addGroup(jPanel7Layout.createSequentialGroup()
             .addComponent(jLabel20)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(dcCalendario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(38, 38, 38)
+                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         .addGap(87, 87, 87))
       .addGroup(jPanel7Layout.createSequentialGroup()
         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +504,7 @@ public class GestionDePrestamos extends javax.swing.JFrame {
     jPanel7Layout.setVerticalGroup(
       jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel7Layout.createSequentialGroup()
-        .addContainerGap(12, Short.MAX_VALUE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(18, 18, 18)
         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -522,11 +525,11 @@ public class GestionDePrestamos extends javax.swing.JFrame {
           .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel21)
           .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel20)
-          .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(21, 21, 21)
+        .addGap(28, 28, 28)
+        .addComponent(dcCalendario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(jLabel20)
+        .addGap(23, 23, 23)
         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jButton8)
           .addComponent(jButton10))
@@ -535,15 +538,28 @@ public class GestionDePrestamos extends javax.swing.JFrame {
 
     jTabbedPane3.addTab("Ver prestamos actuales", jPanel7);
 
+    jTableEjemplo.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null}
+      },
+      new String [] {
+        "Title 1", "Title 2", "Title 3", "Title 4"
+      }
+    ));
+    jScrollPane1.setViewportView(jTableEjemplo);
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 871, Short.MAX_VALUE)
+      .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 332, Short.MAX_VALUE)
+      .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
     );
 
     jTabbedPane3.addTab("Ver historial de préstamos", jPanel2);
@@ -801,6 +817,13 @@ public class GestionDePrestamos extends javax.swing.JFrame {
         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
+    jButton1.setText("jButton1");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -809,16 +832,23 @@ public class GestionDePrestamos extends javax.swing.JFrame {
       .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
         .addContainerGap(124, Short.MAX_VALUE)
-        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(120, 120, 120))
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(120, 120, 120))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addComponent(jButton1)
+            .addGap(146, 146, 146))))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(41, 41, 41)
+        .addGap(18, 18, 18)
+        .addComponent(jButton1)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
         .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
@@ -861,6 +891,10 @@ public class GestionDePrestamos extends javax.swing.JFrame {
     JOptionPane.showMessageDialog(null, "No podemos ayudarle en estos momentos");
   }//GEN-LAST:event_etqAyudaMouseClicked
 
+  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+  }//GEN-LAST:event_jButton1ActionPerformed
+
   /**
    * @param args the command line arguments
    */
@@ -901,6 +935,7 @@ public class GestionDePrestamos extends javax.swing.JFrame {
   private javax.swing.JButton btnGuardar2;
   private javax.swing.JComboBox cbUsuario1;
   private javax.swing.JComboBox cbUsuario2;
+  private com.toedter.calendar.JDateChooser dcCalendario;
   private javax.swing.JLabel etq2Matricula1;
   private javax.swing.JLabel etq2Matricula2;
   private javax.swing.JLabel etq2Nombre1;
@@ -918,6 +953,7 @@ public class GestionDePrestamos extends javax.swing.JFrame {
   private javax.swing.JLabel etqUsuario1;
   private javax.swing.JLabel etqUsuario2;
   private javax.swing.JLabel etqVolver;
+  private javax.swing.JButton jButton1;
   private javax.swing.JButton jButton10;
   private javax.swing.JButton jButton5;
   private javax.swing.JButton jButton6;
@@ -959,8 +995,10 @@ public class GestionDePrestamos extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel5;
   private javax.swing.JPanel jPanel6;
   private javax.swing.JPanel jPanel7;
+  private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JTabbedPane jTabbedPane2;
   private javax.swing.JTabbedPane jTabbedPane3;
+  private javax.swing.JTable jTableEjemplo;
   private javax.swing.JTextField jTextField10;
   private javax.swing.JTextField jTextField11;
   private javax.swing.JTextField jTextField12;
@@ -969,7 +1007,6 @@ public class GestionDePrestamos extends javax.swing.JFrame {
   private javax.swing.JTextField jTextField15;
   private javax.swing.JTextField jTextField16;
   private javax.swing.JTextField jTextField17;
-  private javax.swing.JTextField jTextField18;
   private javax.swing.JTextField jTextField19;
   private javax.swing.JTextField txtCorreo1;
   private javax.swing.JTextField txtMatricula1;

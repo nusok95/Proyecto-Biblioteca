@@ -229,7 +229,7 @@ public class MenuCirculacion extends javax.swing.JFrame {
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
         .addContainerGap()
         .addComponent(jLabel1)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
         .addComponent(jLabel9))
     );
 
@@ -286,7 +286,7 @@ public class MenuCirculacion extends javax.swing.JFrame {
   }//GEN-LAST:event_etqMaterialMouseClicked
 
   private void etqSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etqSalirMouseClicked
-    //System.exit(WIDTH);
+
     IniciarSesion inicio = new IniciarSesion();
     inicio.setVisible(true);
     setVisible(false);
